@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Net.Http.Headers;
 
 namespace Liste
 {
@@ -15,10 +16,10 @@ namespace Liste
         TreeNode root;
         int id = 0;
         public TreeNode cekilecekNode;
-        public void ekle(string kisiAdiSoyadi_, string kisiAdresi_, string kisiTelefonu_, string kisiMail_, string kisiDogumTarihi_, string kisiYabanciDil_, string kisiEhliyet_, EgitimBilgileriListe kisiEgitimListesi_, IsyeriBilgileriListesi kisiIsyeriBilgileriListesi_)
+        public void ekle(string kisiAdiSoyadi_, string kisiAdresi_, string kisiTelefonu_, string kisiMail_, string kisiDogumTarihi_, string kisiYabanciDil_, string kisiEhliyet_, EgitimBilgileriListe kisiEgitimListesi_, IsyeriBilgileriListesi kisiIsyeriBilgileriListesi)
         {
             string id = idDondur();
-            TreeNode eklenecek = new TreeNode( id, kisiAdiSoyadi_,  kisiAdresi_,  kisiTelefonu_,  kisiMail_,  kisiDogumTarihi_,  kisiYabanciDil_,  kisiEhliyet_,kisiEgitimListesi_,kisiIsyeriBilgileriListesi_);
+            TreeNode eklenecek = new TreeNode( id, kisiAdiSoyadi_,  kisiAdresi_,  kisiTelefonu_,  kisiMail_,  kisiDogumTarihi_,  kisiYabanciDil_,  kisiEhliyet_,kisiEgitimListesi_,kisiIsyeriBilgileriListesi);
             if (root == null)
             {
                 root = eklenecek;
@@ -51,7 +52,7 @@ namespace Liste
                 }
             }
         }
-
+       
         private void print(TreeNode node)
         {
             
@@ -102,34 +103,48 @@ namespace Liste
             return node;
         }
 
-        private TreeNode sil(TreeNode node,string kisiAdiSoyadi_)
+        private TreeNode sil(TreeNode node, string kisiAdiSoyadi_, string kisiTelefonu)
         {
 
             if (node == null) ///node null ise geriye null değer döndürecek yani root
             {
                 return node;
             }
+            
             if (string.Compare(node.kisiAdiSoyadi, kisiAdiSoyadi_) == 1)  ////silinecek veri node daki değerden küçükse ife girecek
             {
-                node.sol = sil(node.sol, kisiAdiSoyadi_); ////node un solundaki değer için fonksiyonu tekrar döndürüyor
+                
+                node.sol = sil(node.sol, kisiAdiSoyadi_,kisiTelefonu); ////node un solundaki değer için fonksiyonu tekrar döndürüyor
             }
             else if (string.Compare(node.kisiAdiSoyadi, kisiAdiSoyadi_) == -1)  ////silinecek veri node daki değerden büyükse ife girecek
             {
-                node.sag = sil(node.sag, kisiAdiSoyadi_); ////node un sağındaki değer için fonksiyonu tekrar döndürüyor
+                node.sag = sil(node.sag, kisiAdiSoyadi_,kisiTelefonu) ; ////node un sağındaki değer için fonksiyonu tekrar döndürüyor
             }
             else  //// silinecek veri node daki değere eşitse else e giriyor
             {
-                if (node.sol == null) ///solunda çocuk yoksa sağdaki değeri döndürür oda boşsa fonku bitirir. Buradaki işlem hiç çocuğu yoksa da uygulanır
+                if(node.kisiTelefonu != kisiTelefonu)
                 {
-                    return node.sag;
+                    node.sol=sil(node.sol, kisiAdiSoyadi_, kisiTelefonu);
                 }
-                else if (node.sag == null)
+                else
                 {
-                    return node.sol;
+                    if (node.sol == null) ///solunda çocuk yoksa sağdaki değeri döndürür oda boşsa fonku bitirir. Buradaki işlem hiç çocuğu yoksa da uygulanır
+                    {
+                        return node.sag;
+                    }
+                    else if (node.sag == null)
+                    {
+                        return node.sol;
+                    }
+                    else
+                    {
+                        kopyala(node, minVal(node.sag)); /// düğümde iki tane çocuk varsa sağındaki ağaçtan minimum değeri kendine eşitler (düğümü değil değeri)
+                        node.sag = sil(node.sag, node.kisiAdiSoyadi, kisiTelefonu);  ///
+                    }
                 }
+                
 
-                kopyala(node, minVal(node.sag)); /// düğümde iki tane çocuk varsa sağındaki ağaçtan minimum değeri kendine eşitler (düğümü değil değeri)
-                node.sag = sil(node.sag, node.kisiAdiSoyadi);  ///
+
             }
             return node;
 
@@ -147,25 +162,27 @@ namespace Liste
 
         }
         
-        public void delete(string kisiAdi)
+        public void delete(string kisiAdi,string telefon)
         {
-           root= sil(root,kisiAdi);
+           root= sil(root,kisiAdi,telefon);
             
         }
 
         private void Write(TreeNode node)
         {
             
+            
+
+            
 
             if (node != null)
             {
                 Write(node.sol);
-                
-                string dosya_yolu = @"C:\ikveriTabani.txt";
 
-                FileStream fs = new FileStream(dosya_yolu, FileMode.Append, FileAccess.Write) ;
 
-                StreamWriter sw = new StreamWriter(fs) ;
+                FileStream fs = new FileStream(dosya_yolu, FileMode.Append, FileAccess.Write);
+
+                StreamWriter sw = new StreamWriter(fs);
 
                 sw.WriteLine("*********KISI BILGILERI*********");
                 sw.WriteLine(" ");
@@ -202,14 +219,14 @@ namespace Liste
 
 
                 sw.WriteLine("_____________________________________________________________________");
-
-                Write(node.sag);
                 sw.Flush();
 
                 sw.Close();
                 fs.Close();
+                Write(node.sag);
+               
             }
-           
+            
         }
 
         private void Read(TreeNode node)

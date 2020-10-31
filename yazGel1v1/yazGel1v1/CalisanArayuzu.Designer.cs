@@ -44,18 +44,17 @@
             this.mailLabel = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.egitimBilgisiDataGrid = new System.Windows.Forms.DataGridView();
-            this.isyeriBilgileriDataGrid = new System.Windows.Forms.DataGridView();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.OkulAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Turu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Bolumu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BaglangicTarihi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BitisTarihi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NotOrtalamasi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isyeriBilgileriDataGrid = new System.Windows.Forms.DataGridView();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.IsyeriAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsyeriAdresi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gorevi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CalismaSuresi = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,11 +64,11 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(211, 124);
+            this.button2.Location = new System.Drawing.Point(185, 129);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(137, 23);
             this.button2.TabIndex = 29;
-            this.button2.Text = "Guncelle";
+            this.button2.Text = "Kisi Bilgileri Guncelle";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // label19
@@ -216,52 +215,6 @@
             this.egitimBilgisiDataGrid.Size = new System.Drawing.Size(516, 150);
             this.egitimBilgisiDataGrid.TabIndex = 62;
             // 
-            // isyeriBilgileriDataGrid
-            // 
-            this.isyeriBilgileriDataGrid.AllowUserToAddRows = false;
-            this.isyeriBilgileriDataGrid.AllowUserToDeleteRows = false;
-            this.isyeriBilgileriDataGrid.BackgroundColor = System.Drawing.Color.White;
-            this.isyeriBilgileriDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            this.isyeriBilgileriDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.isyeriBilgileriDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IsyeriAdi,
-            this.Column1,
-            this.IsyeriAdresi,
-            this.Gorevi,
-            this.CalismaSuresi});
-            this.isyeriBilgileriDataGrid.GridColor = System.Drawing.Color.Gray;
-            this.isyeriBilgileriDataGrid.Location = new System.Drawing.Point(30, 393);
-            this.isyeriBilgileriDataGrid.Name = "isyeriBilgileriDataGrid";
-            this.isyeriBilgileriDataGrid.Size = new System.Drawing.Size(516, 150);
-            this.isyeriBilgileriDataGrid.TabIndex = 63;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(30, 176);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(70, 13);
-            this.label39.TabIndex = 64;
-            this.label39.Text = "Egitim Bilgileri";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(27, 377);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(66, 13);
-            this.label40.TabIndex = 65;
-            this.label40.Text = "Isyeri Bilgileri";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(354, 124);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(192, 23);
-            this.button1.TabIndex = 66;
-            this.button1.Text = "Verileri sil ve sistemden cik";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // OkulAdi
             // 
             this.OkulAdi.HeaderText = "OkulAdi";
@@ -296,17 +249,57 @@
             this.NotOrtalamasi.Name = "NotOrtalamasi";
             this.NotOrtalamasi.ReadOnly = true;
             // 
+            // isyeriBilgileriDataGrid
+            // 
+            this.isyeriBilgileriDataGrid.AllowUserToAddRows = false;
+            this.isyeriBilgileriDataGrid.AllowUserToDeleteRows = false;
+            this.isyeriBilgileriDataGrid.BackgroundColor = System.Drawing.Color.White;
+            this.isyeriBilgileriDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.isyeriBilgileriDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.isyeriBilgileriDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IsyeriAdi,
+            this.IsyeriAdresi,
+            this.Gorevi,
+            this.CalismaSuresi});
+            this.isyeriBilgileriDataGrid.GridColor = System.Drawing.Color.Gray;
+            this.isyeriBilgileriDataGrid.Location = new System.Drawing.Point(30, 393);
+            this.isyeriBilgileriDataGrid.Name = "isyeriBilgileriDataGrid";
+            this.isyeriBilgileriDataGrid.Size = new System.Drawing.Size(516, 150);
+            this.isyeriBilgileriDataGrid.TabIndex = 63;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(30, 176);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(70, 13);
+            this.label39.TabIndex = 64;
+            this.label39.Text = "Egitim Bilgileri";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(27, 377);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(66, 13);
+            this.label40.TabIndex = 65;
+            this.label40.Text = "Isyeri Bilgileri";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(354, 129);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(192, 23);
+            this.button1.TabIndex = 66;
+            this.button1.Text = "Verileri sil ve sistemden cik";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // IsyeriAdi
             // 
             this.IsyeriAdi.HeaderText = "IsyeriAdi";
             this.IsyeriAdi.Name = "IsyeriAdi";
             this.IsyeriAdi.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
             // 
             // IsyeriAdresi
             // 
@@ -389,7 +382,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn BitisTarihi;
         private System.Windows.Forms.DataGridViewTextBoxColumn NotOrtalamasi;
         private System.Windows.Forms.DataGridViewTextBoxColumn IsyeriAdi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn IsyeriAdresi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gorevi;
         private System.Windows.Forms.DataGridViewTextBoxColumn CalismaSuresi;

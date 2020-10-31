@@ -71,6 +71,7 @@
     </Compile>
     <Compile Include="IsyeriBilgileriListesi.cs" />
     <Compile Include="IsyeriBilgileriNode.cs" />
+    <Compile Include="KullaniciAdiDosyaIslemleri.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TreeListe.cs" />
