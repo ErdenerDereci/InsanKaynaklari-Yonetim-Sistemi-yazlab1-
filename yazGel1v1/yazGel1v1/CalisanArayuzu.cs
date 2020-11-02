@@ -36,8 +36,9 @@ namespace yazGel1v1
 
             
             KullaniciAdiDosyaIslemleri.kullaniciAdiSifreSil(kullaniciAdiSifre, telefonLabel.Text);
-            
-            
+
+            MessageBox.Show("Sistemden cikildi!");
+            this.Close();
 
 
         }

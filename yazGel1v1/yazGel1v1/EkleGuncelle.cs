@@ -78,25 +78,38 @@ namespace yazGel1v1
         {
             int i = 0;
             IsyeriBilgileriListesi liste = new IsyeriBilgileriListesi();
-            while(isyeriBilgileriDataGrid.Rows[i].Cells[0].Value!= null)
+            while(true)
             {
-                liste.ekle(
+                
+                try
+                {
+                    liste.ekle(
                     isyeriBilgileriDataGrid.Rows[i].Cells[0].Value.ToString(),
                     isyeriBilgileriDataGrid.Rows[i].Cells[1].Value.ToString(),
                     isyeriBilgileriDataGrid.Rows[i].Cells[2].Value.ToString(),
                     isyeriBilgileriDataGrid.Rows[i].Cells[3].Value.ToString()
                     );
-                i++;
+                    i++;
+                }
+                catch
+                {
+                    break;
+                }
+                
             }
 
             return liste;
         }
         private EgitimBilgileriListe egitimBilgisiEkle()
         {
+            int i = 0;
             EgitimBilgileriListe liste = new EgitimBilgileriListe();
-            for(int i=0; i<egitimBilgisiDataGridEkle.Rows.Count-1; i++)
+            while (true)
             {
-                liste.ekle(
+
+                try
+                {
+                    liste.ekle(
                     egitimBilgisiDataGridEkle.Rows[i].Cells[0].Value.ToString(),
                     egitimBilgisiDataGridEkle.Rows[i].Cells[1].Value.ToString(),
                     egitimBilgisiDataGridEkle.Rows[i].Cells[2].Value.ToString(),
@@ -104,11 +117,16 @@ namespace yazGel1v1
                     egitimBilgisiDataGridEkle.Rows[i].Cells[4].Value.ToString(),
                     egitimBilgisiDataGridEkle.Rows[i].Cells[5].Value.ToString()
                     );
+
+                    i++;
+                }
+                catch
+                {
+                    break;
+                }
+
             }
-           
             return liste;
-        }
-        
-        
+        } 
     }
 }
