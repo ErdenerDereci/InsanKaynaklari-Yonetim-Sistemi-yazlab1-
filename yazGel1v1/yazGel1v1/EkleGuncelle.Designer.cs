@@ -32,7 +32,7 @@
             this.label41 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.kaydet = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.yabanciDilText = new System.Windows.Forms.TextBox();
@@ -53,16 +53,16 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
+            this.kullaniciAdiLabel = new System.Windows.Forms.Label();
             this.ehliyetText = new System.Windows.Forms.TextBox();
             this.egitimBilgisiDataGridEkle = new System.Windows.Forms.DataGridView();
-            this.isyeriBilgileriDataGrid = new System.Windows.Forms.DataGridView();
             this.OkulAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Turu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Bolumu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BaglangicTarihi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BitisTarihi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NotOrtalamasi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isyeriBilgileriDataGrid = new System.Windows.Forms.DataGridView();
             this.IsyeriAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsyeriAdresi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gorevi = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -109,15 +109,15 @@
             this.label8.Text = "---------------------------------------------------------------------------------" +
     "------------------------------------------------------------------------------";
             // 
-            // button6
+            // kaydet
             // 
-            this.button6.Location = new System.Drawing.Point(516, 580);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 107;
-            this.button6.Text = "Kaydet";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.kaydet.Location = new System.Drawing.Point(516, 580);
+            this.kaydet.Name = "kaydet";
+            this.kaydet.Size = new System.Drawing.Size(75, 23);
+            this.kaydet.TabIndex = 107;
+            this.kaydet.Text = "Kaydet";
+            this.kaydet.UseVisualStyleBackColor = true;
+            this.kaydet.Click += new System.EventHandler(this.kaydet_Click);
             // 
             // label11
             // 
@@ -145,6 +145,7 @@
             this.yabanciDilText.Size = new System.Drawing.Size(100, 20);
             this.yabanciDilText.TabIndex = 82;
             this.yabanciDilText.Text = "ing";
+            this.yabanciDilText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.yabanciDilText_KeyPress);
             // 
             // dogumTarihiText
             // 
@@ -153,6 +154,7 @@
             this.dogumTarihiText.Size = new System.Drawing.Size(100, 20);
             this.dogumTarihiText.TabIndex = 81;
             this.dogumTarihiText.Text = "1999";
+            this.dogumTarihiText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dogumTarihiText_KeyPress);
             // 
             // mailText
             // 
@@ -161,6 +163,7 @@
             this.mailText.Size = new System.Drawing.Size(100, 20);
             this.mailText.TabIndex = 80;
             this.mailText.Text = "z@gamil";
+            this.mailText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mailText_KeyPress);
             // 
             // telefonText
             // 
@@ -169,6 +172,7 @@
             this.telefonText.Size = new System.Drawing.Size(100, 20);
             this.telefonText.TabIndex = 79;
             this.telefonText.Text = "1";
+            this.telefonText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telefonText_KeyPress);
             // 
             // kisiAdresiText
             // 
@@ -177,6 +181,7 @@
             this.kisiAdresiText.Size = new System.Drawing.Size(100, 20);
             this.kisiAdresiText.TabIndex = 78;
             this.kisiAdresiText.Text = "Uskudar";
+            this.kisiAdresiText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.kisiAdresiText_KeyPress);
             // 
             // kisiAdiText
             // 
@@ -185,6 +190,7 @@
             this.kisiAdiText.Size = new System.Drawing.Size(100, 20);
             this.kisiAdiText.TabIndex = 77;
             this.kisiAdiText.Text = "zeynep";
+            this.kisiAdiText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.kisiAdiText_KeyPress);
             // 
             // label7
             // 
@@ -256,6 +262,7 @@
             this.sifreText.Size = new System.Drawing.Size(100, 20);
             this.sifreText.TabIndex = 114;
             this.sifreText.Text = "1";
+            this.sifreText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sifreText_KeyPress);
             // 
             // sifreTekrarText
             // 
@@ -264,6 +271,7 @@
             this.sifreTekrarText.Size = new System.Drawing.Size(100, 20);
             this.sifreTekrarText.TabIndex = 115;
             this.sifreTekrarText.Text = "1";
+            this.sifreTekrarText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sifreTekrarText_KeyPress);
             // 
             // label19
             // 
@@ -292,14 +300,14 @@
             this.label18.TabIndex = 116;
             this.label18.Text = "Kullanici Adi:";
             // 
-            // label25
+            // kullaniciAdiLabel
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(115, 42);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(123, 13);
-            this.label25.TabIndex = 120;
-            this.label25.Text = "Telefon numarasi olacak";
+            this.kullaniciAdiLabel.AutoSize = true;
+            this.kullaniciAdiLabel.Location = new System.Drawing.Point(118, 42);
+            this.kullaniciAdiLabel.Name = "kullaniciAdiLabel";
+            this.kullaniciAdiLabel.Size = new System.Drawing.Size(10, 13);
+            this.kullaniciAdiLabel.TabIndex = 120;
+            this.kullaniciAdiLabel.Text = "-";
             // 
             // ehliyetText
             // 
@@ -308,6 +316,7 @@
             this.ehliyetText.Size = new System.Drawing.Size(100, 20);
             this.ehliyetText.TabIndex = 121;
             this.ehliyetText.Text = "b1";
+            this.ehliyetText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ehliyetText_KeyPress);
             // 
             // egitimBilgisiDataGridEkle
             // 
@@ -325,24 +334,6 @@
             this.egitimBilgisiDataGridEkle.Name = "egitimBilgisiDataGridEkle";
             this.egitimBilgisiDataGridEkle.Size = new System.Drawing.Size(482, 126);
             this.egitimBilgisiDataGridEkle.TabIndex = 126;
-            // 
-            // isyeriBilgileriDataGrid
-            // 
-            this.isyeriBilgileriDataGrid.AllowDrop = true;
-            this.isyeriBilgileriDataGrid.AllowUserToDeleteRows = false;
-            this.isyeriBilgileriDataGrid.BackgroundColor = System.Drawing.Color.White;
-            this.isyeriBilgileriDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            this.isyeriBilgileriDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.isyeriBilgileriDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IsyeriAdi,
-            this.IsyeriAdresi,
-            this.Gorevi,
-            this.CalismaSuresi});
-            this.isyeriBilgileriDataGrid.GridColor = System.Drawing.Color.Gray;
-            this.isyeriBilgileriDataGrid.Location = new System.Drawing.Point(108, 465);
-            this.isyeriBilgileriDataGrid.Name = "isyeriBilgileriDataGrid";
-            this.isyeriBilgileriDataGrid.Size = new System.Drawing.Size(482, 109);
-            this.isyeriBilgileriDataGrid.TabIndex = 127;
             // 
             // OkulAdi
             // 
@@ -374,6 +365,24 @@
             this.NotOrtalamasi.HeaderText = "NotOrtalamasi";
             this.NotOrtalamasi.Name = "NotOrtalamasi";
             // 
+            // isyeriBilgileriDataGrid
+            // 
+            this.isyeriBilgileriDataGrid.AllowDrop = true;
+            this.isyeriBilgileriDataGrid.AllowUserToDeleteRows = false;
+            this.isyeriBilgileriDataGrid.BackgroundColor = System.Drawing.Color.White;
+            this.isyeriBilgileriDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.isyeriBilgileriDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.isyeriBilgileriDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IsyeriAdi,
+            this.IsyeriAdresi,
+            this.Gorevi,
+            this.CalismaSuresi});
+            this.isyeriBilgileriDataGrid.GridColor = System.Drawing.Color.Gray;
+            this.isyeriBilgileriDataGrid.Location = new System.Drawing.Point(108, 465);
+            this.isyeriBilgileriDataGrid.Name = "isyeriBilgileriDataGrid";
+            this.isyeriBilgileriDataGrid.Size = new System.Drawing.Size(482, 109);
+            this.isyeriBilgileriDataGrid.TabIndex = 127;
+            // 
             // IsyeriAdi
             // 
             this.IsyeriAdi.HeaderText = "IsyeriAdi";
@@ -402,7 +411,7 @@
             this.Controls.Add(this.isyeriBilgileriDataGrid);
             this.Controls.Add(this.egitimBilgisiDataGridEkle);
             this.Controls.Add(this.ehliyetText);
-            this.Controls.Add(this.label25);
+            this.Controls.Add(this.kullaniciAdiLabel);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
@@ -412,7 +421,7 @@
             this.Controls.Add(this.label41);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.kaydet);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.yabanciDilText);
@@ -444,15 +453,9 @@
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button kaydet;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox yabanciDilText;
-        private System.Windows.Forms.TextBox dogumTarihiText;
-        private System.Windows.Forms.TextBox mailText;
-        private System.Windows.Forms.TextBox telefonText;
-        private System.Windows.Forms.TextBox kisiAdresiText;
-        private System.Windows.Forms.TextBox kisiAdiText;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -460,13 +463,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox sifreText;
-        private System.Windows.Forms.TextBox sifreTekrarText;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox ehliyetText;
         public System.Windows.Forms.DataGridView egitimBilgisiDataGridEkle;
         public System.Windows.Forms.DataGridView isyeriBilgileriDataGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn OkulAdi;
@@ -479,5 +478,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IsyeriAdresi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gorevi;
         private System.Windows.Forms.DataGridViewTextBoxColumn CalismaSuresi;
+        public System.Windows.Forms.TextBox yabanciDilText;
+        public System.Windows.Forms.TextBox dogumTarihiText;
+        public System.Windows.Forms.TextBox mailText;
+        public System.Windows.Forms.TextBox telefonText;
+        public System.Windows.Forms.TextBox kisiAdresiText;
+        public System.Windows.Forms.TextBox kisiAdiText;
+        public System.Windows.Forms.TextBox sifreText;
+        public System.Windows.Forms.TextBox sifreTekrarText;
+        public System.Windows.Forms.TextBox ehliyetText;
+        public System.Windows.Forms.Label kullaniciAdiLabel;
     }
 }

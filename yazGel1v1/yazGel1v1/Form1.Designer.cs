@@ -30,7 +30,7 @@
         {
             this.kullaniciAdi = new System.Windows.Forms.TextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.giris = new System.Windows.Forms.Button();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.sifre = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -54,15 +54,15 @@
             this.linkLabel1.Text = "Kayit ol";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // button1
+            // giris
             // 
-            this.button1.Location = new System.Drawing.Point(156, 129);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Giris";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.giris.Location = new System.Drawing.Point(156, 129);
+            this.giris.Name = "giris";
+            this.giris.Size = new System.Drawing.Size(75, 23);
+            this.giris.TabIndex = 4;
+            this.giris.Text = "Giris";
+            this.giris.UseVisualStyleBackColor = true;
+            this.giris.Click += new System.EventHandler(this.giris_Click);
             // 
             // linkLabel3
             // 
@@ -89,7 +89,7 @@
             this.ClientSize = new System.Drawing.Size(277, 183);
             this.Controls.Add(this.sifre);
             this.Controls.Add(this.linkLabel3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.giris);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.kullaniciAdi);
             this.Name = "Form1";
@@ -103,7 +103,7 @@
         #endregion
         private System.Windows.Forms.TextBox kullaniciAdi;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button giris;
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.TextBox sifre;
     }

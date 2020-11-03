@@ -51,6 +51,8 @@ namespace Liste
                     }
                 }
             }
+            
+
         }
        
         private void print(TreeNode node)
@@ -164,17 +166,14 @@ namespace Liste
         
         public void delete(string kisiAdi,string telefon)
         {
+           
            root= sil(root,kisiAdi,telefon);
+            
             
         }
 
         private void Write(TreeNode node)
         {
-            
-            
-
-            
-
             if (node != null)
             {
                 Write(node.sol);
@@ -377,8 +376,9 @@ namespace Liste
             Read(root);
         }
         
-        public void yazdir()
+        public void textiGuncelle()
         {
+            File.Delete(dosya_yolu);
             Write(root);
         }
         private string stringAyikla(string deger)
@@ -401,6 +401,7 @@ namespace Liste
             return donecek;
 
         }
+
     }
 
    

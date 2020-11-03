@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
+            this.kisiBilgileriGuncelle = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.adiLabel = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
@@ -51,25 +51,26 @@
             this.BitisTarihi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NotOrtalamasi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isyeriBilgileriDataGrid = new System.Windows.Forms.DataGridView();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.IsyeriAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsyeriAdresi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gorevi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CalismaSuresi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.verileriSil = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.egitimBilgisiDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.isyeriBilgileriDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // kisiBilgileriGuncelle
             // 
-            this.button2.Location = new System.Drawing.Point(185, 129);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(137, 23);
-            this.button2.TabIndex = 29;
-            this.button2.Text = "Kisi Bilgileri Guncelle";
-            this.button2.UseVisualStyleBackColor = true;
+            this.kisiBilgileriGuncelle.Location = new System.Drawing.Point(185, 129);
+            this.kisiBilgileriGuncelle.Name = "kisiBilgileriGuncelle";
+            this.kisiBilgileriGuncelle.Size = new System.Drawing.Size(137, 23);
+            this.kisiBilgileriGuncelle.TabIndex = 29;
+            this.kisiBilgileriGuncelle.Text = "Kisi Bilgileri Guncelle";
+            this.kisiBilgileriGuncelle.UseVisualStyleBackColor = true;
+            this.kisiBilgileriGuncelle.Click += new System.EventHandler(this.kisiBilgileriGuncelle_Click);
             // 
             // label19
             // 
@@ -267,34 +268,6 @@
             this.isyeriBilgileriDataGrid.Size = new System.Drawing.Size(516, 150);
             this.isyeriBilgileriDataGrid.TabIndex = 63;
             // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(30, 176);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(70, 13);
-            this.label39.TabIndex = 64;
-            this.label39.Text = "Egitim Bilgileri";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(27, 377);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(66, 13);
-            this.label40.TabIndex = 65;
-            this.label40.Text = "Isyeri Bilgileri";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(354, 129);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(192, 23);
-            this.button1.TabIndex = 66;
-            this.button1.Text = "Verileri sil ve sistemden cik";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // IsyeriAdi
             // 
             this.IsyeriAdi.HeaderText = "IsyeriAdi";
@@ -319,12 +292,40 @@
             this.CalismaSuresi.Name = "CalismaSuresi";
             this.CalismaSuresi.ReadOnly = true;
             // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(30, 176);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(70, 13);
+            this.label39.TabIndex = 64;
+            this.label39.Text = "Egitim Bilgileri";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(27, 377);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(66, 13);
+            this.label40.TabIndex = 65;
+            this.label40.Text = "Isyeri Bilgileri";
+            // 
+            // verileriSil
+            // 
+            this.verileriSil.Location = new System.Drawing.Point(354, 129);
+            this.verileriSil.Name = "verileriSil";
+            this.verileriSil.Size = new System.Drawing.Size(192, 23);
+            this.verileriSil.TabIndex = 66;
+            this.verileriSil.Text = "Verileri sil ve sistemden cik";
+            this.verileriSil.UseVisualStyleBackColor = true;
+            this.verileriSil.Click += new System.EventHandler(this.verileriSil_Click);
+            // 
             // CalisanArayuzu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(573, 563);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.verileriSil);
             this.Controls.Add(this.label40);
             this.Controls.Add(this.label39);
             this.Controls.Add(this.isyeriBilgileriDataGrid);
@@ -343,10 +344,11 @@
             this.Controls.Add(this.label25);
             this.Controls.Add(this.adiLabel);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.kisiBilgileriGuncelle);
             this.Name = "CalisanArayuzu";
             this.Text = "CalisanArayuzu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CalisanArayuzu_FormClosed);
+            this.Load += new System.EventHandler(this.CalisanArayuzu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.egitimBilgisiDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.isyeriBilgileriDataGrid)).EndInit();
             this.ResumeLayout(false);
@@ -355,7 +357,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button kisiBilgileriGuncelle;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label30;
@@ -365,7 +367,7 @@
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button verileriSil;
         public System.Windows.Forms.Label adiLabel;
         public System.Windows.Forms.Label dogumTarihiLabel;
         public System.Windows.Forms.Label ehliyetLabel;

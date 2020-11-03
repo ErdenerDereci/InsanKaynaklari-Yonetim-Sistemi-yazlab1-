@@ -14,8 +14,8 @@ namespace yazGel1v1
     public partial class Form1 : Form
     {
         List<string> kullaniciAdiSifre = new List<string>();
-        CalisanArayuzu form = new CalisanArayuzu();
-        TreeListe agaclistesi = new TreeListe();
+       
+       
         public Form1()
         {
             InitializeComponent();
@@ -23,21 +23,19 @@ namespace yazGel1v1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-            agaclistesi.okut();
+            AgacListesiStaticClass.agaclistesi.okut();
+
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void giris_Click(object sender, EventArgs e)
         {
 
             if (kontrolEt())
             {
                 CalisanArayuzu form = new CalisanArayuzu();
-                verileriYolla(form);
-                form.ShowDialog();
-                
-                
+                AgacListesiStaticClass.telefonNo = kullaniciAdi.Text;
+                form.ShowDialog();  
             }
             else
             {
@@ -48,6 +46,7 @@ namespace yazGel1v1
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            AgacListesiStaticClass.sart = "0";
             EkleGuncelle form = new EkleGuncelle();
             form.ShowDialog();
             
@@ -83,43 +82,6 @@ namespace yazGel1v1
                 }
             }
             return false;
-        }
-
-        public void verileriYolla(CalisanArayuzu calisanArayuzu)
-        {
-            agaclistesi.treeDugumDondur(kullaniciAdi.Text);
-            Liste.TreeNode node = agaclistesi.cekilecekNode;
-
-            calisanArayuzu.adiLabel.Text = node.kisiAdiSoyadi;
-            calisanArayuzu.adresiLabel.Text = node.kisiAdresi;
-            calisanArayuzu.telefonLabel.Text = node.kisiTelefonu;
-            calisanArayuzu.dogumTarihiLabel.Text = node.kisiDogumTarihi;
-            calisanArayuzu.yabanciDilLabel.Text = node.kisiYabanciDil;
-            calisanArayuzu.mailLabel.Text = node.kisiMail;
-            calisanArayuzu.ehliyetLabel.Text = node.kisiEhliyet;
-
-            for(int i =0; i<node.kisiEgitimListesi.count(); i++)
-            {
-                calisanArayuzu.egitimBilgisiDataGrid.Rows.Add(
-                    node.kisiEgitimListesi.egitimListesi(i).okulAdi,
-                    node.kisiEgitimListesi.egitimListesi(i).okulturu,
-                    node.kisiEgitimListesi.egitimListesi(i).bolum,
-                    node.kisiEgitimListesi.egitimListesi(i).baslangicTarihi,
-                    node.kisiEgitimListesi.egitimListesi(i).bitisTarihi,
-                    node.kisiEgitimListesi.egitimListesi(i).notOrtalamasi
-                    );
-            }
-            for (int i = 0; i < node.kisiIsyeriBilgileriListesi.count(); i++)
-            {
-                calisanArayuzu.isyeriBilgileriDataGrid.Rows.Add(
-                    node.kisiIsyeriBilgileriListesi.isyeribilgileri(i).isyeriAdi,
-                    node.kisiIsyeriBilgileriListesi.isyeribilgileri(i).isyeriAdresi,
-                    node.kisiIsyeriBilgileriListesi.isyeribilgileri(i).gorevi,
-                    node.kisiIsyeriBilgileriListesi.isyeribilgileri(i).suresi
-                    
-                    );
-            }
-
         }
     }
 }
