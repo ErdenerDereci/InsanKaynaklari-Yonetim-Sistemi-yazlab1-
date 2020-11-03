@@ -64,6 +64,12 @@
     <Compile Include="EkleGuncelle.Designer.cs">
       <DependentUpon>EkleGuncelle.cs</DependentUpon>
     </Compile>
+    <Compile Include="ElemanAra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ElemanAra.Designer.cs">
+      <DependentUpon>ElemanAra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EkleGuncelle.resx">
       <DependentUpon>EkleGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElemanAra.resx">
+      <DependentUpon>ElemanAra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
