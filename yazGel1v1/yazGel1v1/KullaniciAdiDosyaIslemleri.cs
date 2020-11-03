@@ -9,12 +9,10 @@ namespace yazGel1v1
     class KullaniciAdiDosyaIslemleri
     {
         static string  dosya_yolu = @"C:\kullaniciAdiSifre.txt";
-        public static void kullaniciAdiSifreDosyayaYaz(List<string> kullaniciAdiSifre)
+        static List<string> kullaniciAdiSifre = new List<string>();
+        private static void kullaniciAdiSifreDosyayaYaz()
         {
-
-
-            
- 
+            File.Delete(dosya_yolu);
             //İşlem yapacağımız dosyanın yolunu belirtiyoruz.
             FileStream fs = new FileStream(dosya_yolu, FileMode.Append, FileAccess.Write);
             //Bir file stream nesnesi oluşturuyoruz. 1.parametre dosya yolunu,
@@ -34,9 +32,16 @@ namespace yazGel1v1
             fs.Close();
             kullaniciAdiSifre.Clear();
         }
-        public static void kullaniciAdiSifreSil(List<string> kullaniciAdiSifre,string telefon)
+        public static void kullaniciAdiSifreEkle(string kullaniciAdi,string sifre)
         {
-            kullaniciAdiSifreDosyadanOku(kullaniciAdiSifre);
+            kullaniciAdiSifreDosyadanOku();
+            kullaniciAdiSifre.Add(kullaniciAdi);
+            kullaniciAdiSifre.Add(sifre);
+            kullaniciAdiSifreDosyayaYaz();
+        }
+        public static void kullaniciAdiSifreSil(string telefon)
+        {
+            kullaniciAdiSifreDosyadanOku();
             for (int i = 0; i < kullaniciAdiSifre.Count; i++)
             {
                 if (kullaniciAdiSifre[i] == telefon)
@@ -47,14 +52,12 @@ namespace yazGel1v1
 
                 }
             }
-            File.Delete(dosya_yolu);
-            kullaniciAdiSifreDosyayaYaz(kullaniciAdiSifre);
+            kullaniciAdiSifreDosyayaYaz();
         }
-        public static  void kullaniciAdiSifreDosyadanOku(List<string> kullaniciAdiSifre)
+        public static  void kullaniciAdiSifreDosyadanOku()
         {
             kullaniciAdiSifre.Clear();
-            string dosya_yolu2 = @"C:\kullaniciAdiSifre.txt";
-            FileStream fs = new FileStream(dosya_yolu2, FileMode.Open, FileAccess.Read);
+            FileStream fs = new FileStream(dosya_yolu, FileMode.Open, FileAccess.Read);
             StreamReader sr = new StreamReader(fs);
             string yazi = sr.ReadLine();
             while (yazi != null)
@@ -66,6 +69,34 @@ namespace yazGel1v1
             //Veriyi tampon bölgeden dosyaya aktardık.
             sr.Close();
             fs.Close();
+        }
+        public static void kullaniciAdiGuncelle(string guncellenecekTelefonNumarasi,string deger)
+        {
+            kullaniciAdiSifreDosyadanOku();
+            for (int i =0; i<kullaniciAdiSifre.Count; i++)
+            {
+                if (kullaniciAdiSifre[i] == guncellenecekTelefonNumarasi)
+                {
+                    kullaniciAdiSifre[i] = deger;
+                    break;
+                }
+            }
+            kullaniciAdiSifreDosyayaYaz();
+        
+
+        }
+
+        public static bool girisKontrol(string kullaniciAdi,string sifre)
+        {
+            kullaniciAdiSifreDosyadanOku();
+            for (int i = 0; i < kullaniciAdiSifre.Count; i = i + 2)
+            {
+                if (kullaniciAdi == kullaniciAdiSifre[i] && sifre == kullaniciAdiSifre[i + 1])
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

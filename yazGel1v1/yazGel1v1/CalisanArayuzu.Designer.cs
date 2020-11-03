@@ -347,8 +347,8 @@
             this.Controls.Add(this.kisiBilgileriGuncelle);
             this.Name = "CalisanArayuzu";
             this.Text = "CalisanArayuzu";
+            this.Activated += new System.EventHandler(this.CalisanArayuzu_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CalisanArayuzu_FormClosed);
-            this.Load += new System.EventHandler(this.CalisanArayuzu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.egitimBilgisiDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.isyeriBilgileriDataGrid)).EndInit();
             this.ResumeLayout(false);

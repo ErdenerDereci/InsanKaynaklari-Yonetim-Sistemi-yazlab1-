@@ -13,10 +13,6 @@ namespace yazGel1v1
 {
     public partial class CalisanArayuzu : Form
     {
-        
-       
-       
-        List<string> kullaniciAdiSifre = new List<string>();
         public CalisanArayuzu()
         {
             InitializeComponent();
@@ -32,10 +28,8 @@ namespace yazGel1v1
             
             AgacListesiStaticClass.agaclistesi.delete(adiLabel.Text,telefonLabel.Text);
             AgacListesiStaticClass.agaclistesi.textiGuncelle();
-
+            KullaniciAdiDosyaIslemleri.kullaniciAdiSifreSil(telefonLabel.Text);
             
-            KullaniciAdiDosyaIslemleri.kullaniciAdiSifreSil(kullaniciAdiSifre, telefonLabel.Text);
-
             MessageBox.Show("Sistemden cikildi!");
             this.Close();
 
@@ -45,21 +39,20 @@ namespace yazGel1v1
      
         private void kisiBilgileriGuncelle_Click(object sender, EventArgs e)
         {
-            this.Close();
+            ;
             AgacListesiStaticClass.telefonNo = telefonLabel.Text;
             AgacListesiStaticClass.sart = "1";
             AgacListesiStaticClass.kisiAdi = adiLabel.Text;
             EkleGuncelle form = new EkleGuncelle();
-            form.Show();
+            form.ShowDialog();
             
         }
 
-        private void CalisanArayuzu_Load(object sender, EventArgs e)
-        {
-            verileriArayuzeBas();
-        }
+        
         private void verileriArayuzeBas()
         {
+            egitimBilgisiDataGrid.Rows.Clear();
+            isyeriBilgileriDataGrid.Rows.Clear();
             AgacListesiStaticClass.agaclistesi.treeDugumDondur(AgacListesiStaticClass.telefonNo);
             Liste.TreeNode node = AgacListesiStaticClass.agaclistesi.cekilecekNode;
 
@@ -92,6 +85,11 @@ namespace yazGel1v1
 
                     );
             }
+        }
+
+        private void CalisanArayuzu_Activated(object sender, EventArgs e)
+        {
+            verileriArayuzeBas();
         }
     }  
 }

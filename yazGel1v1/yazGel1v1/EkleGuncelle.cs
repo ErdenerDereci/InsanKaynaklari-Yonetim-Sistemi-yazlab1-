@@ -13,67 +13,34 @@ namespace yazGel1v1
 {
     public partial class EkleGuncelle : Form
     {
-        
-
-        List<string> kullaniciAdiSifre = new List<string>();
-        
         public EkleGuncelle()
         {
             InitializeComponent();
         }
-
-        
-
         private void kaydet_Click(object sender, EventArgs e)
         {
             if (kullaniciAdiLabel.Text == "-")
             {
-               AgacListesiStaticClass.agaclistesi.ekle(kisiAdiText.Text, kisiAdresiText.Text, telefonText.Text, mailText.Text, dogumTarihiText.Text, yabanciDilText.Text, ehliyetText.Text, egitimBilgisiEkle(), isyeriEkle());
-
-                kullaniciAdiSifre.Add(telefonText.Text);
-                kullaniciAdiSifre.Add(sifreText.Text);
-                KullaniciAdiDosyaIslemleri.kullaniciAdiSifreDosyayaYaz(kullaniciAdiSifre);
+                AgacListesiStaticClass.agaclistesi.ekle(kisiAdiText.Text, kisiAdresiText.Text, telefonText.Text, mailText.Text, dogumTarihiText.Text, yabanciDilText.Text, ehliyetText.Text, egitimBilgisiEkle(), isyeriEkle());
+                KullaniciAdiDosyaIslemleri.kullaniciAdiSifreEkle(telefonText.Text,sifreText.Text);
                 AgacListesiStaticClass.agaclistesi.textiGuncelle();
                 
                 MessageBox.Show("Kayit basarili!");
+                this.Close();
             }else
             {
                 AgacListesiStaticClass.agaclistesi.delete(AgacListesiStaticClass.kisiAdi,kullaniciAdiLabel.Text);
                 AgacListesiStaticClass.agaclistesi.ekle(kisiAdiText.Text, kisiAdresiText.Text, telefonText.Text, mailText.Text, dogumTarihiText.Text, yabanciDilText.Text, ehliyetText.Text, egitimBilgisiEkle(), isyeriEkle());
                 AgacListesiStaticClass.agaclistesi.textiGuncelle();
                 AgacListesiStaticClass.telefonNo = telefonText.Text;
-                
+                KullaniciAdiDosyaIslemleri.kullaniciAdiGuncelle(kullaniciAdiLabel.Text,telefonText.Text);
                 MessageBox.Show("Guncelleme basarili!");
                 this.Close();
-                CalisanArayuzu form = new CalisanArayuzu();
-                form.Show();
+               
+                
                 
             }
-            
-
         }
-        public void kullaniciAdiSifreListeyeAt()
-        {
-            kullaniciAdiSifre.Clear();
-            string dosya_yolu = @"C:\kullaniciAdiSifre.txt";
-            //Okuma işlem yapacağımız dosyanın yolunu belirtiyoruz.
-            FileStream fs = new FileStream(dosya_yolu, FileMode.Open, FileAccess.Read);
-            StreamReader sw = new StreamReader(fs);
-
-            //Okuma işlemi için bir StreamReader nesnesi oluşturduk.
-            string yazi = sw.ReadLine();
-            while (yazi != null)
-            {
-                kullaniciAdiSifre.Add(yazi);
-                yazi = sw.ReadLine();
-            }
-            //Satır satır okuma işlemini gerçekleştirdik ve ekrana yazdırdık
-            //Son satır okunduktan sonra okuma işlemini bitirdik
-            sw.Close();
-            fs.Close();
-
-        }
-
         private void EkleGuncelle_Load(object sender, EventArgs e)
         {
             if (AgacListesiStaticClass.sart == "1")
@@ -93,10 +60,9 @@ namespace yazGel1v1
                 egitimBilgisiDataGridEkle.Rows[0].Cells[3].Value = 1;
                 egitimBilgisiDataGridEkle.Rows[0].Cells[4].Value = 1;
                 egitimBilgisiDataGridEkle.Rows[0].Cells[5].Value = 1;
-            }
-
-            
+            }  
         }
+
         private IsyeriBilgileriListesi isyeriEkle()
         {
             int i = 0;
@@ -131,6 +97,7 @@ namespace yazGel1v1
 
             return liste;
         }
+
         private EgitimBilgileriListe egitimBilgisiEkle()
         {
             int i = 0;
@@ -172,6 +139,7 @@ namespace yazGel1v1
         {
             keyPressColorChange(kisiAdiText);
         }
+
         private void keyPressColorChange(TextBox textBox)
         {
             if (kullaniciAdiLabel.Text != "-")
@@ -219,6 +187,7 @@ namespace yazGel1v1
         {
             keyPressColorChange(sifreTekrarText);
         }
+
         private void verileriArayuzeBas()
         {
             AgacListesiStaticClass.agaclistesi.treeDugumDondur(AgacListesiStaticClass.telefonNo);
@@ -256,5 +225,7 @@ namespace yazGel1v1
                     );
             }
         }
+
+        
     }
 }

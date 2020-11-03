@@ -37,7 +37,7 @@
             // 
             // kullaniciAdi
             // 
-            this.kullaniciAdi.ForeColor = System.Drawing.Color.Silver;
+            this.kullaniciAdi.ForeColor = System.Drawing.Color.Black;
             this.kullaniciAdi.Location = new System.Drawing.Point(54, 77);
             this.kullaniciAdi.Name = "kullaniciAdi";
             this.kullaniciAdi.Size = new System.Drawing.Size(177, 20);
@@ -76,9 +76,10 @@
             // 
             // sifre
             // 
-            this.sifre.ForeColor = System.Drawing.Color.Silver;
+            this.sifre.ForeColor = System.Drawing.Color.Black;
             this.sifre.Location = new System.Drawing.Point(54, 103);
             this.sifre.Name = "sifre";
+            this.sifre.PasswordChar = '*';
             this.sifre.Size = new System.Drawing.Size(177, 20);
             this.sifre.TabIndex = 6;
             // 
@@ -86,6 +87,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(277, 183);
             this.Controls.Add(this.sifre);
             this.Controls.Add(this.linkLabel3);
