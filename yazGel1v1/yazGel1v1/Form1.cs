@@ -22,6 +22,7 @@ namespace yazGel1v1
         private void Form1_Load(object sender, EventArgs e)
         {
             AgacListesiStaticClass.agaclistesi.okut();
+            
 
 
         }
@@ -49,7 +50,12 @@ namespace yazGel1v1
             EkleGuncelle form = new EkleGuncelle();
             form.ShowDialog();
             
-        }  
+        }
 
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ElemanAra form = new ElemanAra();
+            form.ShowDialog();
+        }
     }
 }

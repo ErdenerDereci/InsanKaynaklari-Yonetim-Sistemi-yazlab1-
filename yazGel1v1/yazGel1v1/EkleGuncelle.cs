@@ -206,21 +206,21 @@ namespace yazGel1v1
             for (int i = 0; i < node.kisiEgitimListesi.count(); i++)
             {
                 egitimBilgisiDataGridEkle.Rows.Add(
-                    node.kisiEgitimListesi.egitimListesi(i).okulAdi,
-                    node.kisiEgitimListesi.egitimListesi(i).okulturu,
-                    node.kisiEgitimListesi.egitimListesi(i).bolum,
-                    node.kisiEgitimListesi.egitimListesi(i).baslangicTarihi,
-                    node.kisiEgitimListesi.egitimListesi(i).bitisTarihi,
-                    node.kisiEgitimListesi.egitimListesi(i).notOrtalamasi
+                    node.kisiEgitimListesi.egitimListesiDugum(i).okulAdi,
+                    node.kisiEgitimListesi.egitimListesiDugum(i).okulturu,
+                    node.kisiEgitimListesi.egitimListesiDugum(i).bolum,
+                    node.kisiEgitimListesi.egitimListesiDugum(i).baslangicTarihi,
+                    node.kisiEgitimListesi.egitimListesiDugum(i).bitisTarihi,
+                    node.kisiEgitimListesi.egitimListesiDugum(i).notOrtalamasi
                     );
             }
             for (int i = 0; i < node.kisiIsyeriBilgileriListesi.count(); i++)
             {
                 isyeriBilgileriDataGrid.Rows.Add(
-                    node.kisiIsyeriBilgileriListesi.isyeribilgileri(i).isyeriAdi,
-                    node.kisiIsyeriBilgileriListesi.isyeribilgileri(i).isyeriAdresi,
-                    node.kisiIsyeriBilgileriListesi.isyeribilgileri(i).gorevi,
-                    node.kisiIsyeriBilgileriListesi.isyeribilgileri(i).suresi
+                    node.kisiIsyeriBilgileriListesi.isyeribilgileriDugum(i).isyeriAdi,
+                    node.kisiIsyeriBilgileriListesi.isyeribilgileriDugum(i).isyeriAdresi,
+                    node.kisiIsyeriBilgileriListesi.isyeribilgileriDugum(i).gorevi,
+                    node.kisiIsyeriBilgileriListesi.isyeribilgileriDugum(i).suresi
 
                     );
             }

@@ -15,7 +15,9 @@ namespace Liste
         string dosya_yolu = @"C:\ikveriTabani.txt";
         TreeNode root;
         int id = 0;
+        int sayac;
         public TreeNode cekilecekNode;
+        public List<TreeNode> treeNodeListesi = new List<TreeNode>();
         public void ekle(string kisiAdiSoyadi_, string kisiAdresi_, string kisiTelefonu_, string kisiMail_, string kisiDogumTarihi_, string kisiYabanciDil_, string kisiEhliyet_, EgitimBilgileriListe kisiEgitimListesi_, IsyeriBilgileriListesi kisiIsyeriBilgileriListesi)
         {
             string id = idDondur();
@@ -54,19 +56,36 @@ namespace Liste
             
 
         }
-       
+        
         private void print(TreeNode node)
         {
             
             if (node != null)
             {
                 print(node.sol);
-                Console.WriteLine(node.kisiAdiSoyadi +"\n"+ node.kisiAdresi + "\n" + node.kisiTelefonu + "\n" + node.kisiMail+ "\n"+
-                    node.kisiDogumTarihi+ "\n"+node.kisiYabanciDil+ "\n"+ node.kisiEhliyet + "\n");
-                node.kisiEgitimListesi.listele();
-                node.kisiIsyeriBilgileriListesi.listele();
+                sayac++;
                 print(node.sag);
             }
+        }
+        private void dugumListeleIndexIcin(TreeNode node,int aranan)
+        {
+            if (node != null)
+            {
+                dugumListeleIndexIcin(node.sol,aranan);
+                if(aranan == sayac)
+                {
+                    cekilecekNode = node;
+                   
+                }
+                sayac++;
+                dugumListeleIndexIcin(node.sag,aranan);
+            }
+            
+        }
+        public void treeDugumDondur(int aranan)
+        {
+            sayac = 0;
+            dugumListeleIndexIcin(root,aranan);
         }
         private TreeNode DugumDondur(TreeNode node, string aranan)
         {
@@ -80,6 +99,24 @@ namespace Liste
                 DugumDondur(node.sag,aranan);
             }
             return null;
+        }
+        private TreeNode kisiIsmineGoreDugum(TreeNode node, string aranan)
+        {
+            if (node != null)
+            {
+                kisiIsmineGoreDugum(node.sol, aranan);
+                if (node.kisiAdiSoyadi == aranan)
+                {
+                    treeNodeListesi.Add(node);
+                }
+                kisiIsmineGoreDugum(node.sag, aranan);
+            }
+            return null;
+        }
+        public void kisiIsmineGoreDugumDondur(string aranan)
+        {
+            treeNodeListesi.Clear();
+            kisiIsmineGoreDugum(root, aranan);
         }
         public TreeNode treeDugumDondur(string aranan)
         {
@@ -197,22 +234,22 @@ namespace Liste
                 for (int i = 0; i<node.kisiEgitimListesi.count(); i++)
                 {
                     sw.WriteLine(" ");
-                    sw.WriteLine("Okul Adi: "+node.kisiEgitimListesi.egitimListesi(i).okulAdi);
-                    sw.WriteLine("Okul Turu: "+ node.kisiEgitimListesi.egitimListesi(i).okulturu);
-                    sw.WriteLine("Bolumu: " + node.kisiEgitimListesi.egitimListesi(i).bolum);
-                    sw.WriteLine("Baslangic Tarihi: " + node.kisiEgitimListesi.egitimListesi(i).baslangicTarihi);
-                    sw.WriteLine("Bitis Tarihi: " + node.kisiEgitimListesi.egitimListesi(i).bitisTarihi);
-                    sw.WriteLine("Not Ortalamasi: " + node.kisiEgitimListesi.egitimListesi(i).notOrtalamasi);
+                    sw.WriteLine("Okul Adi: "+node.kisiEgitimListesi.egitimListesiDugum(i).okulAdi);
+                    sw.WriteLine("Okul Turu: "+ node.kisiEgitimListesi.egitimListesiDugum(i).okulturu);
+                    sw.WriteLine("Bolumu: " + node.kisiEgitimListesi.egitimListesiDugum(i).bolum);
+                    sw.WriteLine("Baslangic Tarihi: " + node.kisiEgitimListesi.egitimListesiDugum(i).baslangicTarihi);
+                    sw.WriteLine("Bitis Tarihi: " + node.kisiEgitimListesi.egitimListesiDugum(i).bitisTarihi);
+                    sw.WriteLine("Not Ortalamasi: " + node.kisiEgitimListesi.egitimListesiDugum(i).notOrtalamasi);
                     sw.WriteLine("......");
                 }
                 sw.WriteLine("+++++++++Isyeri Bilgileri+++++++++");
                 for (int i =0; i<node.kisiIsyeriBilgileriListesi.count(); i++)
                 {
                     sw.WriteLine(" ");
-                    sw.WriteLine("Isyeri Adi: " + node.kisiIsyeriBilgileriListesi.isyeribilgileri(i).isyeriAdi);
-                    sw.WriteLine("Isyeri Adresi: " + node.kisiIsyeriBilgileriListesi.isyeribilgileri(i).isyeriAdresi);
-                    sw.WriteLine("Gorevi: " + node.kisiIsyeriBilgileriListesi.isyeribilgileri(i).gorevi);
-                    sw.WriteLine("Calisma suresi: " + node.kisiIsyeriBilgileriListesi.isyeribilgileri(i).suresi);
+                    sw.WriteLine("Isyeri Adi: " + node.kisiIsyeriBilgileriListesi.isyeribilgileriDugum(i).isyeriAdi);
+                    sw.WriteLine("Isyeri Adresi: " + node.kisiIsyeriBilgileriListesi.isyeribilgileriDugum(i).isyeriAdresi);
+                    sw.WriteLine("Gorevi: " + node.kisiIsyeriBilgileriListesi.isyeribilgileriDugum(i).gorevi);
+                    sw.WriteLine("Calisma suresi: " + node.kisiIsyeriBilgileriListesi.isyeribilgileriDugum(i).suresi);
                     sw.WriteLine("......");
                 }
 
@@ -400,6 +437,12 @@ namespace Liste
             }
             return donecek;
 
+        }
+        public int count()
+        {
+            sayac = 0;
+            print(root);
+            return sayac;
         }
 
     }

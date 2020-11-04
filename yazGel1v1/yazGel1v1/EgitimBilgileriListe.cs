@@ -91,7 +91,7 @@ namespace Liste
             }
             return sayac;
         }
-        public EgitimBilgileriNode egitimListesi(int i)
+        public EgitimBilgileriNode egitimListesiDugum(int i)
         {
             EgitimBilgileriNode temp = head;
             int sayac = 0;

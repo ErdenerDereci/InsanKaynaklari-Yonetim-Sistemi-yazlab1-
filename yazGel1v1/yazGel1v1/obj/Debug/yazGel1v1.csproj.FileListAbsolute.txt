@@ -14,3 +14,4 @@ D:\Vs2019\yazGel1v1\yazGel1v1\bin\Debug\Liste.exe
 D:\Vs2019\yazGel1v1\yazGel1v1\bin\Debug\Liste.pdb
 D:\Vs2019\yazGel1v1\yazGel1v1\bin\Debug\Liste.exe.config
 D:\Vs2019\yazGel1v1\yazGel1v1\obj\Debug\yazGel1v1.csproj.CopyComplete
+D:\Vs2019\yazGel1v1\yazGel1v1\obj\Debug\yazGel1v1.ElemanAra.resources

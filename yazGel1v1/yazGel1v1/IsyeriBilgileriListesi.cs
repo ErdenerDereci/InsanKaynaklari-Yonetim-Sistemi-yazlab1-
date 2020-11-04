@@ -91,7 +91,7 @@ namespace Liste
             }
             return sayac;
         }
-        public IsyeriBilgileriNode isyeribilgileri(int i)
+        public IsyeriBilgileriNode isyeribilgileriDugum(int i)
         {
             IsyeriBilgileriNode temp = head;
             int sayac = 0;
