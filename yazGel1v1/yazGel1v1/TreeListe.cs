@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Net.Http.Headers;
+using System.Xml;
 
 namespace Liste
 {
@@ -16,6 +17,7 @@ namespace Liste
         TreeNode root;
         int id = 0;
         int sayac;
+        int sayac2;
         public TreeNode cekilecekNode;
         public List<TreeNode> treeNodeListesi = new List<TreeNode>();
         public void ekle(string kisiAdiSoyadi_, string kisiAdresi_, string kisiTelefonu_, string kisiMail_, string kisiDogumTarihi_, string kisiYabanciDil_, string kisiEhliyet_, EgitimBilgileriListe kisiEgitimListesi_, IsyeriBilgileriListesi kisiIsyeriBilgileriListesi)
@@ -56,7 +58,6 @@ namespace Liste
             
 
         }
-        
         private void print(TreeNode node)
         {
             
@@ -67,6 +68,7 @@ namespace Liste
                 print(node.sag);
             }
         }
+        /////// tüm liseleme
         private void dugumListeleIndexIcin(TreeNode node,int aranan)
         {
             if (node != null)
@@ -87,19 +89,184 @@ namespace Liste
             sayac = 0;
             dugumListeleIndexIcin(root,aranan);
         }
-        private TreeNode DugumDondur(TreeNode node, string aranan)
+
+        //private TreeNode filtrelemeDolas(TreeNode node,  
+        //    string kisiAdi, 
+        //    string minimumDeneyim, 
+        //    string maksimumYas, 
+        //    string ehliyet, 
+        //    bool ingilizceBilenler,
+        //    bool birdenFazlaDil,
+        //    bool deneyimsiz,
+        //    bool lisans,
+        //    bool yuksekLisans,
+        //    bool doktora   )
+        //{
+        //    if (node != null)
+        //    {
+        //        filtrelemeDolas(node.sol, kisiAdi, minimumDeneyim, maksimumYas, ehliyet, ingilizceBilenler, birdenFazlaDil, deneyimsiz, lisans, yuksekLisans, doktora);
+                
+        //        filtrelemeDolas(node.sag, kisiAdi, minimumDeneyim, maksimumYas, ehliyet, ingilizceBilenler, birdenFazlaDil, deneyimsiz, lisans, yuksekLisans, doktora);
+        //    }
+        //    return null;
+        //}
+        ///// telefon için düğüm döndür
+        private TreeNode DugumDondur(TreeNode node, string aranan,string sart)
         {
             if (node != null)
             {
-                DugumDondur(node.sol,aranan);
-                if (node.kisiTelefonu == aranan)
+                DugumDondur(node.sol, aranan,sart);
+
+                if (sart == "telefon")
                 {
-                    cekilecekNode= node;
+                    if (node.kisiTelefonu == aranan)
+                    {
+                        cekilecekNode = node;
+                    }
                 }
-                DugumDondur(node.sag,aranan);
+                else if (sart == "searchbar")
+                {
+                    if (node.kisiAdiSoyadi == aranan)
+                    {
+                        treeNodeListesi.Add(node);
+                    }
+                }
+                else if(sart == "minimumDeneyim")
+                {
+
+                    sayac2 = 0;
+                    //Deneyimleri toplayacak dongu
+                    for (int i = 0; i < node.kisiIsyeriBilgileriListesi.count(); i++)
+                    {
+                        sayac2 = sayac2 + Convert.ToInt32(node.kisiIsyeriBilgileriListesi.isyeribilgileriDugum(i).suresi);
+
+                    }
+                    //Aranandan buyukse veya esitse listeye atilacak
+                    if (sayac2 >= Convert.ToInt32(aranan))
+
+                    {
+                        treeNodeListesi.Add(node);
+                    }
+                }
+                else if (sart == "maximumYas")
+                {
+                    if (Convert.ToInt32(node.kisiDogumTarihi) >= 2020 - Convert.ToInt32(aranan))
+                    {
+                        treeNodeListesi.Add(node);
+                    }
+                }
+                else if (sart == "ehliyet")
+                {
+                    if (node.kisiEhliyet == aranan)
+                    {
+                        treeNodeListesi.Add(node);
+                    }
+                }
+                else if (sart == "ingilizceBilenler")
+                {
+                    if (node.kisiYabanciDil.ToLower().Contains("ingilizce"))
+                    {
+                        treeNodeListesi.Add(node);
+                    }
+
+                }
+                else if (sart == "birdenFazlaDilBilenler")
+                {
+                    int virgulsayaci = 0;
+                    if (node.kisiYabanciDil.ToLower().Contains("türkçe"))
+                    {
+                        
+                        for(int i = 0; i<node.kisiYabanciDil.Length; i++)
+                        {
+                            if (node.kisiYabanciDil[i] == ',')
+                            {
+                                virgulsayaci++;
+                            }
+                        }
+                        if (virgulsayaci > 1)
+                        {
+                            treeNodeListesi.Add(node);
+                        }
+                    }
+                    else
+                    {
+                        for (int i = 0; i < node.kisiYabanciDil.Length; i++)
+                        {
+                            if (node.kisiYabanciDil[i] == ',')
+                            {
+                                virgulsayaci++;
+                            }
+                        }
+                        if (virgulsayaci > 0)
+                        {
+                            treeNodeListesi.Add(node);
+                        }
+                    }
+                    //if (node.kisiTelefonu == aranan)
+                    //{
+                    //    cekilecekNode = node;
+                    //}
+                }
+                else if (sart == "deneyimsizKisiler")
+                {
+                    if (node.kisiIsyeriBilgileriListesi == null)
+                    {
+                        treeNodeListesi.Add(node);
+                    }
+                }
+                else if (sart == "ogrenimDerecesi")
+                {
+                    for(int i = 0; i<node.kisiEgitimListesi.count(); i++)
+                    {
+                        if (node.kisiEgitimListesi.egitimListesiDugum(i).okulturu == aranan)
+                        {
+                            treeNodeListesi.Add(node);
+                        }
+                    }
+                }
+                else
+                {
+                    treeNodeListesi.Add(node);
+                }
+
+
+
+
+                DugumDondur(node.sag, aranan,sart);
             }
             return null;
         }
+        public void filtrelemeFonksiyonu(string aranan, string sart)
+        {
+            treeNodeListesi.Clear();
+            DugumDondur(root, aranan,sart);
+        }
+        /////deneyime göre düğüm döndür
+        private TreeNode DeneyimeGoreDugum(TreeNode node, int aranan)
+        {
+            if (node != null)
+            {
+                DeneyimeGoreDugum(node.sol, aranan);
+                sayac2 = 0;
+                for (int i = 0; i<node.kisiIsyeriBilgileriListesi.count();i++)
+                {
+                    sayac2 = sayac2 + Convert.ToInt32(node.kisiIsyeriBilgileriListesi.isyeribilgileriDugum(i).suresi) ;
+                    
+                }
+                if (sayac2 >= aranan)
+                {
+                    treeNodeListesi.Add(node);
+                }
+                DeneyimeGoreDugum(node.sag, aranan);
+            }
+            return null;
+        }
+        public void DeneyimeGoreDugumDondur(int aranan)
+        {
+            treeNodeListesi.Clear();
+            DeneyimeGoreDugum(root, aranan);
+        }
+        /////// isme(searche) göre düğüm döndür
         private TreeNode kisiIsmineGoreDugum(TreeNode node, string aranan)
         {
             if (node != null)
@@ -118,9 +285,43 @@ namespace Liste
             treeNodeListesi.Clear();
             kisiIsmineGoreDugum(root, aranan);
         }
-        public TreeNode treeDugumDondur(string aranan)
+        //////Maksimum yaşa göre düğüm döndür
+        private TreeNode YasaGoreDugum(TreeNode node, int aranan)
         {
-            return DugumDondur(root,aranan);
+            if (node != null)
+            {
+                YasaGoreDugum(node.sol, aranan);
+                if (Convert.ToInt32(node.kisiDogumTarihi) >= 2020 - aranan)
+                {
+                    treeNodeListesi.Add(node);
+                }
+                YasaGoreDugum(node.sag, aranan);
+            }
+            return null;
+        }
+        public void YasaGoreDugumDondur(int aranan)
+        {
+            treeNodeListesi.Clear();
+            YasaGoreDugum(root, aranan);
+        }
+        ///// ehilyet düğüm döndür
+        private TreeNode ehliyetDugum(TreeNode node, string aranan)
+        {
+            if (node != null)
+            {
+                ehliyetDugum(node.sol, aranan);
+                if (node.kisiEhliyet == aranan)
+                {
+                    treeNodeListesi.Add(node);
+                }
+                ehliyetDugum(node.sag, aranan);
+            }
+            return null;
+        }
+        public void ehliyetDugumDondur(string aranan)
+        {
+            treeNodeListesi.Clear();
+            ehliyetDugum(root, aranan);
         }
         public void listele()
         {
@@ -358,9 +559,16 @@ namespace Liste
                         }
                         else if (satir[0] == '+')
                         {
+
                             satir = sw.ReadLine();
                             IsyeriBilgileriListesi isyeriliste = new IsyeriBilgileriListesi();
+                            if (satir[0] == '_')
+                            {
+                                ekle(kisiAdi, adresi, telefonu, mail, dogumtarihi, yabancidil, ehliyet, egitimliste, isyeriliste);
+                                break;
+                            }
 
+                            
                             while (true)
                             {
                                 satir = sw.ReadLine();
@@ -388,6 +596,7 @@ namespace Liste
                                 }
                                 else if (satir[0] == '_')
                                 {
+                                    
                                     ekle(kisiAdi, adresi, telefonu, mail, dogumtarihi, yabancidil, ehliyet, egitimliste, isyeriliste);
                                     
                                     break;

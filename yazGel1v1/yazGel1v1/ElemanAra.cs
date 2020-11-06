@@ -26,8 +26,14 @@ namespace yazGel1v1
         private void button1_Click(object sender, EventArgs e)
         {
             elemanAraDataGrid.Rows.Clear();
-            searcBarListele();
-            
+            //searcBarListele();
+            //ehliyetListele();
+            //minimumDeneyimListele();
+            //maksimumYasListele();
+            //ingilizceBilenlerListele();
+            herseyiListele();
+
+
         }
         private void herseyiListele()
         {
@@ -49,8 +55,31 @@ namespace yazGel1v1
                 count = node.kisiIsyeriBilgileriListesi.count();
             }
 
-
-            elemanAraDataGrid.Rows.Add(
+            if (node.kisiIsyeriBilgileriListesi.count() == 0)
+            {
+                elemanAraDataGrid.Rows.Add(
+               node.kisiAdiSoyadi,
+               node.kisiAdresi,
+               node.kisiTelefonu,
+               node.kisiMail,
+               node.kisiDogumTarihi,
+               node.kisiYabanciDil,
+               node.kisiEhliyet,
+               node.kisiEgitimListesi.egitimListesiDugum(0).okulAdi,
+               node.kisiEgitimListesi.egitimListesiDugum(0).okulturu,
+               node.kisiEgitimListesi.egitimListesiDugum(0).bolum,
+               node.kisiEgitimListesi.egitimListesiDugum(0).baslangicTarihi,
+               node.kisiEgitimListesi.egitimListesiDugum(0).bitisTarihi,
+               node.kisiEgitimListesi.egitimListesiDugum(0).notOrtalamasi,
+               "-",
+               "-",
+               "-",
+               "-"
+               );
+            }
+            else
+            {
+                elemanAraDataGrid.Rows.Add(
                 node.kisiAdiSoyadi,
                 node.kisiAdresi,
                 node.kisiTelefonu,
@@ -69,6 +98,8 @@ namespace yazGel1v1
                 node.kisiIsyeriBilgileriListesi.isyeribilgileriDugum(0).gorevi,
                 node.kisiIsyeriBilgileriListesi.isyeribilgileriDugum(0).suresi
                 );
+            }
+            
             if (renk == "gri")
             {
                 elemanAraDataGrid.Rows[elemanAraDataGrid.Rows.Count - 1].DefaultCellStyle.BackColor = Color.FromArgb(230, 240, 252);
@@ -106,32 +137,37 @@ namespace yazGel1v1
 
             if (buyuk=="egitim")
             {
-                for(int i = count; i<node.kisiEgitimListesi.count(); i++)
+                if (count == 0)
                 {
-                    elemanAraDataGrid.Rows.Add(
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    node.kisiEgitimListesi.egitimListesiDugum(i).okulAdi,
-                    node.kisiEgitimListesi.egitimListesiDugum(i).okulturu,
-                    node.kisiEgitimListesi.egitimListesiDugum(i).bolum,
-                    node.kisiEgitimListesi.egitimListesiDugum(i).baslangicTarihi,
-                    node.kisiEgitimListesi.egitimListesiDugum(i).bitisTarihi,
-                    node.kisiEgitimListesi.egitimListesiDugum(i).notOrtalamasi,
-                    "",
-                    "",
-                    "",
-                    ""
-                    );
-                    if (renk == "gri")
+                    count++;
+                    for (int i = count; i < node.kisiEgitimListesi.count(); i++)
                     {
-                        elemanAraDataGrid.Rows[elemanAraDataGrid.Rows.Count - 1].DefaultCellStyle.BackColor = Color.FromArgb(230, 240, 252);
+                        elemanAraDataGrid.Rows.Add(
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        node.kisiEgitimListesi.egitimListesiDugum(i).okulAdi,
+                        node.kisiEgitimListesi.egitimListesiDugum(i).okulturu,
+                        node.kisiEgitimListesi.egitimListesiDugum(i).bolum,
+                        node.kisiEgitimListesi.egitimListesiDugum(i).baslangicTarihi,
+                        node.kisiEgitimListesi.egitimListesiDugum(i).bitisTarihi,
+                        node.kisiEgitimListesi.egitimListesiDugum(i).notOrtalamasi,
+                        "-",
+                        "-",
+                        "-",
+                        "-"
+                        );
+                        if (renk == "gri")
+                        {
+                            elemanAraDataGrid.Rows[elemanAraDataGrid.Rows.Count - 1].DefaultCellStyle.BackColor = Color.FromArgb(230, 240, 252);
+                        }
                     }
                 }
+                
 
             }
             else
@@ -200,9 +236,75 @@ namespace yazGel1v1
         }
         private void searcBarListele()
         {
-            elemanAraDataGrid.Rows.Clear();
-            AgacListesiStaticClass.agaclistesi.kisiIsmineGoreDugumDondur(textBox1.Text);
+            
+            AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(textBox1.Text, "searchbar");
             for(int i =0; i<AgacListesiStaticClass.agaclistesi.treeNodeListesi.Count; i++)
+            {
+                dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.treeNodeListesi[i]);
+
+            }
+
+        }
+        private void minimumDeneyimListele()
+        {
+            
+            AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(minimumDeneyimTextbox.Text, "minimumDeneyim");
+            for (int i = 0; i < AgacListesiStaticClass.agaclistesi.treeNodeListesi.Count; i++)
+            {
+                dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.treeNodeListesi[i]);
+            }
+        }
+        private void maksimumYasListele()
+        {
+            
+            if (maksimumYasTextBox.Text != "")
+            {
+                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(maksimumYasTextBox.Text, "maximumYas");
+                for (int i = 0; i < AgacListesiStaticClass.agaclistesi.treeNodeListesi.Count; i++)
+                {
+                    dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.treeNodeListesi[i]);
+
+                }
+            }
+
+        }
+        private void ehliyetListele()
+        {
+            
+            AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(ehilyetComboBox.Text,"ehliyet");
+            for (int i = 0; i < AgacListesiStaticClass.agaclistesi.treeNodeListesi.Count; i++)
+            {
+                dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.treeNodeListesi[i]);
+            }
+        }
+        private void ingilizceBilenlerListele()
+        {
+            AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu("ingilizce", "ingilizceBilenler");
+            for (int i = 0; i < AgacListesiStaticClass.agaclistesi.treeNodeListesi.Count; i++)
+            {
+                dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.treeNodeListesi[i]);
+            }
+        }
+        private void birdenFazlaDilBilenler()
+        {
+            AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu("", "birdenFazlaDilBilenler");
+            for (int i = 0; i < AgacListesiStaticClass.agaclistesi.treeNodeListesi.Count; i++)
+            {
+                dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.treeNodeListesi[i]);
+            }
+        }
+        private void deneyimsizKisiler()
+        {
+            AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu("", "deneyimsizKisiler");
+            for (int i = 0; i < AgacListesiStaticClass.agaclistesi.treeNodeListesi.Count; i++)
+            {
+                dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.treeNodeListesi[i]);
+            }
+        }
+        private void ogrenimDerecesi()
+        {
+            AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(comboBox1.Text, "ogrenimDerecesi");
+            for (int i = 0; i < AgacListesiStaticClass.agaclistesi.treeNodeListesi.Count; i++)
             {
                 dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.treeNodeListesi[i]);
             }

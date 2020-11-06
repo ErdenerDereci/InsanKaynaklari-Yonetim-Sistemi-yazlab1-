@@ -190,7 +190,7 @@ namespace yazGel1v1
 
         private void verileriArayuzeBas()
         {
-            AgacListesiStaticClass.agaclistesi.treeDugumDondur(AgacListesiStaticClass.telefonNo);
+            AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(AgacListesiStaticClass.telefonNo,"telefon");
             Liste.TreeNode node = AgacListesiStaticClass.agaclistesi.cekilecekNode;
 
             
