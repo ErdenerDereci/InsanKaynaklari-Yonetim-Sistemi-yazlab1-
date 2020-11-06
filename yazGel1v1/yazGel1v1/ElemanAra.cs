@@ -26,18 +26,57 @@ namespace yazGel1v1
         private void button1_Click(object sender, EventArgs e)
         {
             elemanAraDataGrid.Rows.Clear();
+
+            if (minimumDeneyimTextbox.Text != "")
+            {
+                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(minimumDeneyimTextbox.Text,"minimumDeneyim");
+            }
+            if (maksimumYasTextBox.Text != "")
+            {
+                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(maksimumYasTextBox.Text, "maximumYas");
+            }
+            if (ehliyetComboBox.Text != "")
+            {
+                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(ehliyetComboBox.Text, "ehliyet");
+            }
+            if (ingilizceBilenlerCheckBox.Checked == true)
+            {
+                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu("ingilizce", "ingilizceBilenler");
+            }
+            if (birdenFazlaDilCheckBox.Checked == true)
+            {
+                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu("", "birdenFazlaDilBilenler");
+            }
+            if (deneyimsizKisilerCheckbox.Checked == true)
+            {
+                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu("", "deneyimsizKisiler");
+            }
+            if (lisansTuru.Text != "")
+            {
+                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(lisansTuru.Text.ToLower(), "ogrenimDerecesi");
+            }
+            if (searcbar.Text != "")
+            {
+                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(searcbar.Text, "searchbar");
+            }
             //searcBarListele();
             //ehliyetListele();
             //minimumDeneyimListele();
             //maksimumYasListele();
             //ingilizceBilenlerListele();
-            herseyiListele();
-
+            //herseyiListele();
+            //deneyimsizKisiler();
+            //ogrenimDerecesi();
 
         }
         private void herseyiListele()
         {
-            listelemeFonksiyonu("hersey");
+            AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu("","");
+            for (int i = 0; i < AgacListesiStaticClass.agaclistesi.treeNodeListesi.Count; i++)
+            {
+                dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.treeNodeListesi[i]);
+
+            }
         }
         private void dataGrideVerileriBas(Liste.TreeNode node)
         {
@@ -203,41 +242,12 @@ namespace yazGel1v1
 
             
         }
-        private void listelemeFonksiyonu(string sart)
+        
+        private void searcBarListele(string sart)
         {
             
-            Liste.TreeNode node;
-            for (int i = 0; i < AgacListesiStaticClass.agaclistesi.count(); i++)
-            {
-                if (renk == "beyaz")
-                {
-                    renk = "gri";
-                }
-                else
-                {
-                    renk = "beyaz";
-                }
-
-                if (sart == "kisiyeGore")
-                {
-                    AgacListesiStaticClass.agaclistesi.kisiIsmineGoreDugumDondur(textBox1.Text);
-                    
-                }
-                else
-                {
-                    AgacListesiStaticClass.agaclistesi.treeDugumDondur(i);
-                    node = AgacListesiStaticClass.agaclistesi.cekilecekNode;
-                    dataGrideVerileriBas(node);
-                }
-                
-                
-
-            }
-        }
-        private void searcBarListele()
-        {
+            AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(searcbar.Text, "searchbar");
             
-            AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(textBox1.Text, "searchbar");
             for(int i =0; i<AgacListesiStaticClass.agaclistesi.treeNodeListesi.Count; i++)
             {
                 dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.treeNodeListesi[i]);
@@ -271,7 +281,7 @@ namespace yazGel1v1
         private void ehliyetListele()
         {
             
-            AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(ehilyetComboBox.Text,"ehliyet");
+            AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(ehliyetComboBox.Text,"ehliyet");
             for (int i = 0; i < AgacListesiStaticClass.agaclistesi.treeNodeListesi.Count; i++)
             {
                 dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.treeNodeListesi[i]);
@@ -303,7 +313,7 @@ namespace yazGel1v1
         }
         private void ogrenimDerecesi()
         {
-            AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(comboBox1.Text, "ogrenimDerecesi");
+            AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(lisansTuru.Text.ToLower(), "ogrenimDerecesi");
             for (int i = 0; i < AgacListesiStaticClass.agaclistesi.treeNodeListesi.Count; i++)
             {
                 dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.treeNodeListesi[i]);
