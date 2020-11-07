@@ -189,7 +189,7 @@ namespace Liste
                 else if (sart == "birdenFazlaDilBilenler")
                 {
                     int virgulsayaci = 0;
-                    if (node.kisiYabanciDil.ToLower().Contains("türkçe"))
+                    if (turkceMetniIngilizceyeCevir(node.kisiYabanciDil.ToLower()).Contains("turkce"))
                     {
                         
                         for(int i = 0; i<node.kisiYabanciDil.Length; i++)
@@ -279,8 +279,7 @@ namespace Liste
                         {
                             yeniListe.Add(temp[j]);
                         }
-                    
-                    
+
                     }
                 }
                 filtrelenmisTreeNodeListesi.Clear();

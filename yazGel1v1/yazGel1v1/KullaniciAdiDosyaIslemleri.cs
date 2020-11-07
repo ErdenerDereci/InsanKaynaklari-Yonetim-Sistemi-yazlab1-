@@ -98,5 +98,17 @@ namespace yazGel1v1
             }
             return false;
         }
+        public static bool telefonKontrol(string telefon) {
+            kullaniciAdiSifreDosyadanOku();
+            for (int i = 0; i < kullaniciAdiSifre.Count; i = i + 2)
+            {
+                if (kullaniciAdiSifre[i] == telefon)
+                {
+                    return true;
+                }
+            }
+            return false;
+
+        }
     }
 }

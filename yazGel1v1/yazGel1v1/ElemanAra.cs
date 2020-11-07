@@ -29,6 +29,7 @@ namespace yazGel1v1
             AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi.Clear();
             elemanAraDataGrid.Rows.Clear();
             AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu("", "");
+           
             if (minimumDeneyimTextbox.Text != "")
             {
                 AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(minimumDeneyimTextbox.Text,"minimumDeneyim");
@@ -61,10 +62,18 @@ namespace yazGel1v1
             {
                 AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(searcbar.Text, "searchbar");
             }
+            
             for (int i = 0; i < AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi.Count; i++)
             {
                 dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi[i]);
-
+                if (renk == "beyaz")
+                {
+                    renk = "gri";
+                }
+                else
+                {
+                    renk = "beyaz";
+                }
             }
             //searcBarListele();
             //ehliyetListele();
