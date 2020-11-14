@@ -25,42 +25,58 @@ namespace yazGel1v1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string siralamaBicimi;
+
+            if (inOrder.Checked == true)
+            {
+
+                siralamaBicimi = "inOrder";
+
+            }else if (preOrder.Checked == true)
+            {
+                siralamaBicimi = "preOrder";
+            }
+            else
+            {
+                siralamaBicimi = "postOrder";
+            }
+
             AgacListesiStaticClass.agaclistesi.sart2 = 0;
             AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi.Clear();
             elemanAraDataGrid.Rows.Clear();
-            AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu("", "");
+            AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu("", "",siralamaBicimi);
            
             if (minimumDeneyimTextbox.Text != "")
             {
-                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(minimumDeneyimTextbox.Text,"minimumDeneyim");
+                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(minimumDeneyimTextbox.Text,"minimumDeneyim", siralamaBicimi);
             }
             if (maksimumYasTextBox.Text != "")
             {
-                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(maksimumYasTextBox.Text, "maximumYas");
+                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(maksimumYasTextBox.Text, "maximumYas", siralamaBicimi);
             }
             if (ehliyetComboBox.Text != "")
             {
-                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(ehliyetComboBox.Text, "ehliyet");
+                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(ehliyetComboBox.Text, "ehliyet", siralamaBicimi);
             }
             if (ingilizceBilenlerCheckBox.Checked == true)
             {
-                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu("ingilizce", "ingilizceBilenler");
+                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu("ingilizce", "ingilizceBilenler", siralamaBicimi);
             }
             if (birdenFazlaDilCheckBox.Checked == true)
             {
-                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu("", "birdenFazlaDilBilenler");
+                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu("", "birdenFazlaDilBilenler", siralamaBicimi);
             }
             if (deneyimsizKisilerCheckbox.Checked == true)
             {
-                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu("", "deneyimsizKisiler");
+                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu("", "deneyimsizKisiler", siralamaBicimi);
             }
             if (lisansTuru.Text != "")
             {
-                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(lisansTuru.Text.ToLower(), "ogrenimDerecesi");
+                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(lisansTuru.Text.ToLower(), "ogrenimDerecesi", siralamaBicimi);
             }
             if (searcbar.Text != "")
             {
-                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(searcbar.Text, "searchbar");
+                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(searcbar.Text, "searchbar", siralamaBicimi);
             }
             
             for (int i = 0; i < AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi.Count; i++)
@@ -255,85 +271,85 @@ namespace yazGel1v1
             
         }
         
-        private void searcBarListele(string sart)
-        {
+        //private void searcBarListele(string sart)
+        //{
             
-            AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(searcbar.Text, "searchbar");
+        //    AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(searcbar.Text, "searchbar");
             
-            for(int i =0; i<AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi.Count; i++)
-            {
-                dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi[i]);
+        //    for(int i =0; i<AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi.Count; i++)
+        //    {
+        //        dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi[i]);
 
-            }
+        //    }
 
-        }
-        private void minimumDeneyimListele()
-        {
+        //}
+        //private void minimumDeneyimListele()
+        //{
             
-            AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(minimumDeneyimTextbox.Text, "minimumDeneyim");
-            for (int i = 0; i < AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi.Count; i++)
-            {
-                dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi[i]);
-            }
-        }
-        private void maksimumYasListele()
-        {
+        //    AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(minimumDeneyimTextbox.Text, "minimumDeneyim");
+        //    for (int i = 0; i < AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi.Count; i++)
+        //    {
+        //        dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi[i]);
+        //    }
+        //}
+        //private void maksimumYasListele()
+        //{
             
-            if (maksimumYasTextBox.Text != "")
-            {
-                AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(maksimumYasTextBox.Text, "maximumYas");
-                for (int i = 0; i < AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi.Count; i++)
-                {
-                    dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi[i]);
+        //    if (maksimumYasTextBox.Text != "")
+        //    {
+        //        AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(maksimumYasTextBox.Text, "maximumYas");
+        //        for (int i = 0; i < AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi.Count; i++)
+        //        {
+        //            dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi[i]);
 
-                }
-            }
+        //        }
+        //    }
 
-        }
-        private void ehliyetListele()
-        {
+        //}
+        //private void ehliyetListele()
+        //{
             
-            AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(ehliyetComboBox.Text,"ehliyet");
-            for (int i = 0; i < AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi.Count; i++)
-            {
-                dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi[i]);
-            }
-        }
-        private void ingilizceBilenlerListele()
-        {
-            AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu("ingilizce", "ingilizceBilenler");
-            for (int i = 0; i < AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi.Count; i++)
-            {
-                dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi[i]);
-            }
-        }
-        private void birdenFazlaDilBilenler()
-        {
-            AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu("", "birdenFazlaDilBilenler");
-            for (int i = 0; i < AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi.Count; i++)
-            {
-                dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi[i]);
-            }
-        }
-        private void deneyimsizKisiler()
-        {
-            AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu("", "deneyimsizKisiler");
-            for (int i = 0; i < AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi.Count; i++)
-            {
-                dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi[i]);
-            }
-        }
-        private void ogrenimDerecesi()
-        {
-            if (AgacListesiStaticClass.agaclistesi.temp.Count == 0)
-            {
+        //    AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(ehliyetComboBox.Text,"ehliyet");
+        //    for (int i = 0; i < AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi.Count; i++)
+        //    {
+        //        dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi[i]);
+        //    }
+        //}
+        //private void ingilizceBilenlerListele()
+        //{
+        //    AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu("ingilizce", "ingilizceBilenler");
+        //    for (int i = 0; i < AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi.Count; i++)
+        //    {
+        //        dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi[i]);
+        //    }
+        //}
+        //private void birdenFazlaDilBilenler()
+        //{
+        //    AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu("", "birdenFazlaDilBilenler");
+        //    for (int i = 0; i < AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi.Count; i++)
+        //    {
+        //        dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi[i]);
+        //    }
+        //}
+        //private void deneyimsizKisiler()
+        //{
+        //    AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu("", "deneyimsizKisiler");
+        //    for (int i = 0; i < AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi.Count; i++)
+        //    {
+        //        dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi[i]);
+        //    }
+        //}
+        //private void ogrenimDerecesi()
+        //{
+        //    if (AgacListesiStaticClass.agaclistesi.temp.Count == 0)
+        //    {
 
-            }
-            AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(lisansTuru.Text.ToLower(), "ogrenimDerecesi");
-            for (int i = 0; i < AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi.Count; i++)
-            {
-                dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi[i]);
-            }
-        }
+        //    }
+        //    AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(lisansTuru.Text.ToLower(), "ogrenimDerecesi");
+        //    for (int i = 0; i < AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi.Count; i++)
+        //    {
+        //        dataGrideVerileriBas(AgacListesiStaticClass.agaclistesi.filtrelenmisTreeNodeListesi[i]);
+        //    }
+        //}
     }
 }

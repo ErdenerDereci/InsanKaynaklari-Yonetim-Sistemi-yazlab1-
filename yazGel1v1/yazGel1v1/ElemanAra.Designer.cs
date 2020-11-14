@@ -60,6 +60,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lisansTuru = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.inOrder = new System.Windows.Forms.RadioButton();
+            this.preOrder = new System.Windows.Forms.RadioButton();
+            this.postOrder = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.elemanAraDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -389,11 +392,48 @@
             this.button2.Text = "Filtreleme ozellestir";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // inOrder
+            // 
+            this.inOrder.AutoSize = true;
+            this.inOrder.Checked = true;
+            this.inOrder.Location = new System.Drawing.Point(471, 53);
+            this.inOrder.Name = "inOrder";
+            this.inOrder.Size = new System.Drawing.Size(59, 17);
+            this.inOrder.TabIndex = 18;
+            this.inOrder.TabStop = true;
+            this.inOrder.Text = "inOrder";
+            this.inOrder.UseVisualStyleBackColor = true;
+            // 
+            // preOrder
+            // 
+            this.preOrder.AutoSize = true;
+            this.preOrder.Location = new System.Drawing.Point(471, 81);
+            this.preOrder.Name = "preOrder";
+            this.preOrder.Size = new System.Drawing.Size(66, 17);
+            this.preOrder.TabIndex = 19;
+            this.preOrder.TabStop = true;
+            this.preOrder.Text = "preOrder";
+            this.preOrder.UseVisualStyleBackColor = true;
+            // 
+            // postOrder
+            // 
+            this.postOrder.AutoSize = true;
+            this.postOrder.Location = new System.Drawing.Point(471, 109);
+            this.postOrder.Name = "postOrder";
+            this.postOrder.Size = new System.Drawing.Size(71, 17);
+            this.postOrder.TabIndex = 20;
+            this.postOrder.TabStop = true;
+            this.postOrder.Text = "postOrder";
+            this.postOrder.UseVisualStyleBackColor = true;
+            // 
             // ElemanAra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1794, 618);
+            this.Controls.Add(this.postOrder);
+            this.Controls.Add(this.preOrder);
+            this.Controls.Add(this.inOrder);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lisansTuru);
@@ -452,5 +492,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox lisansTuru;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.RadioButton inOrder;
+        private System.Windows.Forms.RadioButton preOrder;
+        private System.Windows.Forms.RadioButton postOrder;
     }
 }

@@ -8,7 +8,7 @@ namespace yazGel1v1
 {
     class KullaniciAdiDosyaIslemleri
     {
-        static string  dosya_yolu = @"C:\kullaniciAdiSifre.txt";
+        static string  dosya_yolu = Environment.CurrentDirectory + @"\kullaniciAdiSifre.txt";
         static List<string> kullaniciAdiSifre = new List<string>();
         private static void kullaniciAdiSifreDosyayaYaz()
         {
@@ -57,7 +57,7 @@ namespace yazGel1v1
         public static  void kullaniciAdiSifreDosyadanOku()
         {
             kullaniciAdiSifre.Clear();
-            FileStream fs = new FileStream(dosya_yolu, FileMode.Open, FileAccess.Read);
+            FileStream fs = new FileStream(dosya_yolu, FileMode.OpenOrCreate, FileAccess.Read);
             StreamReader sr = new StreamReader(fs);
             string yazi = sr.ReadLine();
             while (yazi != null)
