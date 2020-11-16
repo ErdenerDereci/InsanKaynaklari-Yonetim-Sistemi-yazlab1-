@@ -31,20 +31,26 @@ namespace yazGel1v1
             } else if (sifreKontrol())
             {
                 MessageBox.Show("Sifreler eslesmiyor.");
-            } else if (KullaniciAdiDosyaIslemleri.telefonKontrol(telefonText.Text))
-            {
-                MessageBox.Show("Bu telefon numarasi zaten kayitli");
-            }
+            } 
             else
             {
+
                 if (kullaniciAdiLabel.Text == "-")
                 {
-                    AgacListesiStaticClass.agaclistesi.ekle(kisiAdiText.Text, kisiAdresiText.Text, telefonText.Text, mailText.Text, dogumTarihiText.Text, yabanciDilText.Text, ehliyetText.Text, egitimBilgisiEkle(), isyeriEkle());
-                    KullaniciAdiDosyaIslemleri.kullaniciAdiSifreEkle(telefonText.Text, sifreText.Text);
-                    AgacListesiStaticClass.agaclistesi.textiGuncelle();
+                    if (KullaniciAdiDosyaIslemleri.telefonKontrol(telefonText.Text))
+                    {
+                        MessageBox.Show("Bu telefon numarasi zaten kayitli");
+                    }
+                    else
+                    {
+                        AgacListesiStaticClass.agaclistesi.ekle(kisiAdiText.Text, kisiAdresiText.Text, telefonText.Text, mailText.Text, dogumTarihiText.Text, yabanciDilText.Text, ehliyetText.Text, egitimBilgisiEkle(), isyeriEkle());
+                        KullaniciAdiDosyaIslemleri.kullaniciAdiSifreEkle(telefonText.Text, sifreText.Text);
+                        AgacListesiStaticClass.agaclistesi.textiGuncelle();
 
-                    MessageBox.Show("Kayit basarili!");
-                    this.Close();
+                        MessageBox.Show("Kayit basarili!");
+                        this.Close();
+                    }
+                    
                 }
                 else
                 {

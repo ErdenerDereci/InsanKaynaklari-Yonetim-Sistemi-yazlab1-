@@ -320,6 +320,7 @@
             // 
             // egitimBilgisiDataGridEkle
             // 
+            this.egitimBilgisiDataGridEkle.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
             this.egitimBilgisiDataGridEkle.AllowUserToOrderColumns = true;
             this.egitimBilgisiDataGridEkle.BackgroundColor = System.Drawing.Color.White;
             this.egitimBilgisiDataGridEkle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
