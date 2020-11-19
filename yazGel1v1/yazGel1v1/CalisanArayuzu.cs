@@ -39,7 +39,7 @@ namespace yazGel1v1
      
         private void kisiBilgileriGuncelle_Click(object sender, EventArgs e)
         {
-            ;
+            
             AgacListesiStaticClass.telefonNo = telefonLabel.Text;
             AgacListesiStaticClass.sart = "1";
             AgacListesiStaticClass.kisiAdi = adiLabel.Text;

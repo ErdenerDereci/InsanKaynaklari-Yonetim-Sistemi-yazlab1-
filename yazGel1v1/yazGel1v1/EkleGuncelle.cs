@@ -19,10 +19,10 @@ namespace yazGel1v1
         }
         private void kaydet_Click(object sender, EventArgs e)
         {
-            if (!hucreKontrol(egitimBilgisiDataGridEkle))
+            if (hucreKontrol(egitimBilgisiDataGridEkle))
             {
                 MessageBox.Show("Ilgili alanlari doldurun!");
-            } else if (!hucreKontrol(isyeriBilgileriDataGrid))
+            } else if (hucreKontrol(isyeriBilgileriDataGrid))
             {
                 MessageBox.Show("Ilgili alanlari doldurun!");
             } else if (textboxKontrol())
@@ -31,7 +31,10 @@ namespace yazGel1v1
             } else if (sifreKontrol())
             {
                 MessageBox.Show("Sifreler eslesmiyor.");
-            } 
+            }else if (egitimBilgisiDataGridEkle.Rows.Count == 1)
+            {
+                MessageBox.Show("Egitim bilgisi eklemek zorunludur!!!");
+            }
             else
             {
                 if (kullaniciAdiLabel.Text == "-")
@@ -58,6 +61,7 @@ namespace yazGel1v1
                     AgacListesiStaticClass.agaclistesi.textiGuncelle();
                     AgacListesiStaticClass.telefonNo = telefonText.Text;
                     KullaniciAdiDosyaIslemleri.kullaniciAdiGuncelle(kullaniciAdiLabel.Text, telefonText.Text);
+                    KullaniciAdiDosyaIslemleri.sifreGuncelle(telefonText.Text,sifreText.Text);
                     MessageBox.Show("Guncelleme basarili!");
                     this.Close();
 
@@ -215,7 +219,8 @@ namespace yazGel1v1
             AgacListesiStaticClass.agaclistesi.filtrelemeFonksiyonu(AgacListesiStaticClass.telefonNo,"telefon","inOrder");
             Liste.TreeNode node = AgacListesiStaticClass.agaclistesi.cekilecekNode;
 
-            
+            sifreText.Text = KullaniciAdiDosyaIslemleri.sifreBul(node.kisiTelefonu);
+            sifreTekrarText.Text = sifreText.Text;
             kullaniciAdiLabel.Text = node.kisiTelefonu;
             kisiAdiText.Text = node.kisiAdiSoyadi;
             kisiAdresiText.Text = node.kisiAdresi;
@@ -247,29 +252,34 @@ namespace yazGel1v1
                     );
             }
         }
-
+       
         private bool hucreKontrol(DataGridView datagrid)
         {
-            
-            for (int i=0; i<datagrid.Rows.Count; i++)
+            int sayac1;
+            int sayac2;
+            for (int i = 0; i < datagrid.Rows.Count; i++)
             {
-                
+                sayac1 = 0;
+                sayac2 = 0;
                 for (int j=0; j<datagrid.Columns.Count; j++)
                 {
-                    if (datagrid.Rows[i].Cells[j].Value==null)
+                    if (datagrid.Rows[i].Cells[j].Value == null)
                     {
-                        for(int a =j; a< datagrid.Columns.Count; a++)
-                        {
-                            if(datagrid.Rows[i].Cells[j].Value != datagrid.Rows[i].Cells[a].Value)
-                            {
-                                return false;
-                            }
-                        }
+                        sayac1++;
                     }
-                    
+                    if(datagrid.Rows[i].Cells[j].Value != null)
+                    {
+                        sayac2++;
+                    }
                 }
+
+                if(sayac1!=0 && sayac2 != 0)
+                {
+                    return true;
+                }
+                
             }
-            return true;
+            return false;
         }
         private bool textboxKontrol()
         {

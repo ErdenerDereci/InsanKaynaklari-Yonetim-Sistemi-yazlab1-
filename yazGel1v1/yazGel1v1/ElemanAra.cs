@@ -111,7 +111,7 @@ namespace yazGel1v1
 
 
         }
-        
+
         private void dataGrideVerileriBas(Liste.TreeNode node)
         {
 
@@ -128,8 +128,31 @@ namespace yazGel1v1
                 count = node.kisiIsyeriBilgileriListesi.count();
             }
 
-
-            elemanAraDataGrid.Rows.Add(
+            if (node.kisiIsyeriBilgileriListesi.isyeribilgileriDugum(0) == null)
+            {
+                elemanAraDataGrid.Rows.Add(
+                node.kisiAdiSoyadi,
+                node.kisiAdresi,
+                node.kisiTelefonu,
+                node.kisiMail,
+                node.kisiDogumTarihi,
+                node.kisiYabanciDil,
+                node.kisiEhliyet,
+                node.kisiEgitimListesi.egitimListesiDugum(0).okulAdi,
+                node.kisiEgitimListesi.egitimListesiDugum(0).okulturu,
+                node.kisiEgitimListesi.egitimListesiDugum(0).bolum,
+                node.kisiEgitimListesi.egitimListesiDugum(0).baslangicTarihi,
+                node.kisiEgitimListesi.egitimListesiDugum(0).bitisTarihi,
+                node.kisiEgitimListesi.egitimListesiDugum(0).notOrtalamasi,
+                "---",
+                "---",
+                "---",
+                "---"
+                );
+            }
+            else
+            {
+                elemanAraDataGrid.Rows.Add(
                 node.kisiAdiSoyadi,
                 node.kisiAdresi,
                 node.kisiTelefonu,
@@ -148,6 +171,8 @@ namespace yazGel1v1
                 node.kisiIsyeriBilgileriListesi.isyeribilgileriDugum(0).gorevi,
                 node.kisiIsyeriBilgileriListesi.isyeribilgileriDugum(0).suresi
                 );
+            }
+            
             if (renk == "gri")
             {
                 elemanAraDataGrid.Rows[elemanAraDataGrid.Rows.Count - 1].DefaultCellStyle.BackColor = Color.FromArgb(230, 240, 252);
@@ -185,32 +210,65 @@ namespace yazGel1v1
 
             if (buyuk == "egitim")
             {
-                for (int i = count; i < node.kisiEgitimListesi.count(); i++)
+                if (count == 0)
                 {
-                    elemanAraDataGrid.Rows.Add(
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    node.kisiEgitimListesi.egitimListesiDugum(i).okulAdi,
-                    node.kisiEgitimListesi.egitimListesiDugum(i).okulturu,
-                    node.kisiEgitimListesi.egitimListesiDugum(i).bolum,
-                    node.kisiEgitimListesi.egitimListesiDugum(i).baslangicTarihi,
-                    node.kisiEgitimListesi.egitimListesiDugum(i).bitisTarihi,
-                    node.kisiEgitimListesi.egitimListesiDugum(i).notOrtalamasi,
-                    "",
-                    "",
-                    "",
-                    ""
-                    );
-                    if (renk == "gri")
+                    for (int i = count + 1; i < node.kisiEgitimListesi.count(); i++)
                     {
-                        elemanAraDataGrid.Rows[elemanAraDataGrid.Rows.Count - 1].DefaultCellStyle.BackColor = Color.FromArgb(230, 240, 252);
+                        elemanAraDataGrid.Rows.Add(
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        node.kisiEgitimListesi.egitimListesiDugum(i).okulAdi,
+                        node.kisiEgitimListesi.egitimListesiDugum(i).okulturu,
+                        node.kisiEgitimListesi.egitimListesiDugum(i).bolum,
+                        node.kisiEgitimListesi.egitimListesiDugum(i).baslangicTarihi,
+                        node.kisiEgitimListesi.egitimListesiDugum(i).bitisTarihi,
+                        node.kisiEgitimListesi.egitimListesiDugum(i).notOrtalamasi,
+                        "---",
+                        "---",
+                        "---",
+                        "---"
+                        );
+                        if (renk == "gri")
+                        {
+                            elemanAraDataGrid.Rows[elemanAraDataGrid.Rows.Count - 1].DefaultCellStyle.BackColor = Color.FromArgb(230, 240, 252);
+                        }
                     }
                 }
+                else
+                {
+                    for (int i = count; i < node.kisiEgitimListesi.count(); i++)
+                    {
+                        elemanAraDataGrid.Rows.Add(
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        node.kisiEgitimListesi.egitimListesiDugum(i).okulAdi,
+                        node.kisiEgitimListesi.egitimListesiDugum(i).okulturu,
+                        node.kisiEgitimListesi.egitimListesiDugum(i).bolum,
+                        node.kisiEgitimListesi.egitimListesiDugum(i).baslangicTarihi,
+                        node.kisiEgitimListesi.egitimListesiDugum(i).bitisTarihi,
+                        node.kisiEgitimListesi.egitimListesiDugum(i).notOrtalamasi,
+                        "---",
+                        "---",
+                        "---",
+                        "---"
+                        );
+                        if (renk == "gri")
+                        {
+                            elemanAraDataGrid.Rows[elemanAraDataGrid.Rows.Count - 1].DefaultCellStyle.BackColor = Color.FromArgb(230, 240, 252);
+                        }
+                    }
+                }
+
 
             }
             else
@@ -225,12 +283,12 @@ namespace yazGel1v1
                     "",
                     "",
                     "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
+                    "---",
+                    "---",
+                    "---",
+                    "---",
+                    "---",
+                    "---",
                     node.kisiIsyeriBilgileriListesi.isyeribilgileriDugum(i).isyeriAdi,
                     node.kisiIsyeriBilgileriListesi.isyeribilgileriDugum(i).isyeriAdresi,
                     node.kisiIsyeriBilgileriListesi.isyeribilgileriDugum(i).gorevi,

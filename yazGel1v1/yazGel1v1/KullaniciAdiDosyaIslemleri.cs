@@ -10,6 +10,29 @@ namespace yazGel1v1
     {
         static string  dosya_yolu = Environment.CurrentDirectory + @"\kullaniciAdiSifre.txt";
         static List<string> kullaniciAdiSifre = new List<string>();
+        public static void sifreGuncelle(string telefon,string sifre)
+        {
+            kullaniciAdiSifreDosyadanOku();
+            for (int i = 0; i < kullaniciAdiSifre.Count; i = i + 2)
+            {
+                if (kullaniciAdiSifre[i] == telefon)
+                {
+                    kullaniciAdiSifre[i + 1] = sifre;
+                }
+            }
+        }
+        public static string sifreBul(string telefon)
+        {
+            kullaniciAdiSifreDosyadanOku();
+            for (int i =0; i<kullaniciAdiSifre.Count; i=i+2)
+            {
+                if (kullaniciAdiSifre[i] == telefon)
+                {
+                    return kullaniciAdiSifre[i + 1];
+                }
+            }
+            return null;
+        }
         private static void kullaniciAdiSifreDosyayaYaz()
         {
             File.Delete(dosya_yolu);

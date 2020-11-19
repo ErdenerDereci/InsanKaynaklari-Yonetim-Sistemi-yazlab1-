@@ -1,0 +1,50 @@
+*********KISI BILGILERI*********
+ 
+Kisi Adi Soyadi: 1
+Kisi Adresi: 1
+Kisi Telefonu: 12
+Kisi Mail: 1
+Kisi DogumTarihi: 1
+Kisi Yabanci Dil: 1
+Kisi Ehliyet: 1
+ 
+--------Egitim Bilgileri--------
+ 
+Okul Adi: a
+Okul Turu: a
+Bolumu: a
+Baslangic Tarihi: a
+Bitis Tarihi: a
+Not Ortalamasi: a
+......
+ 
+Okul Adi: a
+Okul Turu: a
+Bolumu: a
+Baslangic Tarihi: a
+Bitis Tarihi: a
+Not Ortalamasi: a
+......
++++++++++Isyeri Bilgileri+++++++++
+_____________________________________________________________________
+*********KISI BILGILERI*********
+ 
+Kisi Adi Soyadi: z
+Kisi Adresi: z
+Kisi Telefonu: zz
+Kisi Mail: z
+Kisi DogumTarihi: z
+Kisi Yabanci Dil: z
+Kisi Ehliyet: z
+ 
+--------Egitim Bilgileri--------
+ 
+Okul Adi: a
+Okul Turu: s
+Bolumu: a
+Baslangic Tarihi: a
+Bitis Tarihi: s
+Not Ortalamasi: s
+......
++++++++++Isyeri Bilgileri+++++++++
+_____________________________________________________________________
