@@ -35,12 +35,14 @@
             this.sifre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // kullaniciAdi
             // 
             this.kullaniciAdi.ForeColor = System.Drawing.Color.Black;
-            this.kullaniciAdi.Location = new System.Drawing.Point(113, 49);
+            this.kullaniciAdi.Location = new System.Drawing.Point(105, 51);
             this.kullaniciAdi.Name = "kullaniciAdi";
             this.kullaniciAdi.Size = new System.Drawing.Size(175, 21);
             this.kullaniciAdi.TabIndex = 1;
@@ -50,7 +52,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Liberation Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.linkLabel1.LinkColor = System.Drawing.SystemColors.MenuHighlight;
-            this.linkLabel1.Location = new System.Drawing.Point(241, 110);
+            this.linkLabel1.Location = new System.Drawing.Point(233, 112);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(48, 14);
             this.linkLabel1.TabIndex = 2;
@@ -62,7 +64,7 @@
             // 
             this.giris.BackColor = System.Drawing.Color.Linen;
             this.giris.Cursor = System.Windows.Forms.Cursors.Default;
-            this.giris.Location = new System.Drawing.Point(113, 104);
+            this.giris.Location = new System.Drawing.Point(105, 106);
             this.giris.Name = "giris";
             this.giris.Size = new System.Drawing.Size(82, 27);
             this.giris.TabIndex = 4;
@@ -75,7 +77,7 @@
             this.linkLabel3.AutoSize = true;
             this.linkLabel3.Font = new System.Drawing.Font("Liberation Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.linkLabel3.LinkColor = System.Drawing.SystemColors.MenuHighlight;
-            this.linkLabel3.Location = new System.Drawing.Point(274, 8);
+            this.linkLabel3.Location = new System.Drawing.Point(266, 10);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(71, 14);
             this.linkLabel3.TabIndex = 5;
@@ -86,7 +88,7 @@
             // sifre
             // 
             this.sifre.ForeColor = System.Drawing.Color.Black;
-            this.sifre.Location = new System.Drawing.Point(113, 77);
+            this.sifre.Location = new System.Drawing.Point(105, 79);
             this.sifre.Name = "sifre";
             this.sifre.PasswordChar = '*';
             this.sifre.Size = new System.Drawing.Size(175, 21);
@@ -96,7 +98,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Liberation Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(23, 49);
+            this.label1.Location = new System.Drawing.Point(15, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 14);
             this.label1.TabIndex = 7;
@@ -106,31 +108,42 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Liberation Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(66, 77);
+            this.label2.Location = new System.Drawing.Point(58, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 14);
             this.label2.TabIndex = 8;
             this.label2.Text = "Şifre : ";
+            // 
+            // panel1
+            // 
+            this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.sifre);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.kullaniciAdi);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.linkLabel1);
+            this.panel1.Controls.Add(this.giris);
+            this.panel1.Controls.Add(this.linkLabel3);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(348, 164);
+            this.panel1.TabIndex = 9;
             // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(358, 162);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.sifre);
-            this.Controls.Add(this.linkLabel3);
-            this.Controls.Add(this.giris);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.kullaniciAdi);
+            this.ClientSize = new System.Drawing.Size(373, 193);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Liberation Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Giriş";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,6 +157,7 @@
         private System.Windows.Forms.TextBox sifre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
