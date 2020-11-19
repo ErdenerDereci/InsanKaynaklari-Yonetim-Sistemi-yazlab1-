@@ -34,7 +34,6 @@ namespace yazGel1v1
             } 
             else
             {
-
                 if (kullaniciAdiLabel.Text == "-")
                 {
                     if (KullaniciAdiDosyaIslemleri.telefonKontrol(telefonText.Text))

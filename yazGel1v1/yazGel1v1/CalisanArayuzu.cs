@@ -91,5 +91,6 @@ namespace yazGel1v1
         {
             verileriArayuzeBas();
         }
+
     }  
 }

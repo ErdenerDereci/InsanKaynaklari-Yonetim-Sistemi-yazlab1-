@@ -23,7 +23,25 @@ namespace Liste
         public List<TreeNode> filtrelenmisTreeNodeListesi = new List<TreeNode>();
         public List<TreeNode> temp = new List<TreeNode>();
         public List<TreeNode> yeniListe = new List<TreeNode>();
+        private int maxDerinlik(TreeNode node)
+        {
+            if (node == null)
+                return 0;
+            else
+            {
+                int solDerinlik = maxDerinlik(node.sol);
+                int sagDerinlk = maxDerinlik(node.sag);
 
+                if (solDerinlik > sagDerinlk)
+                    return (solDerinlik + 1);
+                else
+                    return (sagDerinlk + 1);
+            }
+        }
+        public int agacderinligi()
+        {
+            return maxDerinlik(root);
+        }
         public void ekle(string kisiAdiSoyadi_, string kisiAdresi_, string kisiTelefonu_, string kisiMail_, string kisiDogumTarihi_, string kisiYabanciDil_, string kisiEhliyet_, EgitimBilgileriListe kisiEgitimListesi_, IsyeriBilgileriListesi kisiIsyeriBilgileriListesi)
         {
             string id = idDondur();
@@ -172,7 +190,8 @@ namespace Liste
                 return false;
             }
 
-        }private void filtrele(TreeNode node,string aranan,string sart)
+        }
+        private void filtrele(TreeNode node,string aranan,string sart)
         {
 
             if (sart == "telefon")
@@ -358,9 +377,7 @@ namespace Liste
                 
 
             }
-        }
-       
-        
+        }      
         public void listele()
         {
             print(root);
