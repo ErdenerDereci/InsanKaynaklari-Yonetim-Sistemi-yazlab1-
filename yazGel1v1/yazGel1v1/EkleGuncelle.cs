@@ -81,20 +81,8 @@ namespace yazGel1v1
             {
                 verileriArayuzeBas();
             }
-            else
-            {
-                isyeriBilgileriDataGrid.Rows[0].Cells[0].Value = 1;
-                isyeriBilgileriDataGrid.Rows[0].Cells[1].Value = 1;
-                isyeriBilgileriDataGrid.Rows[0].Cells[2].Value = 1;
-                isyeriBilgileriDataGrid.Rows[0].Cells[3].Value = 1;
-
-                egitimBilgisiDataGridEkle.Rows[0].Cells[0].Value = 1;
-                egitimBilgisiDataGridEkle.Rows[0].Cells[1].Value = 1;
-                egitimBilgisiDataGridEkle.Rows[0].Cells[2].Value = 1;
-                egitimBilgisiDataGridEkle.Rows[0].Cells[3].Value = 1;
-                egitimBilgisiDataGridEkle.Rows[0].Cells[4].Value = 1;
-                egitimBilgisiDataGridEkle.Rows[0].Cells[5].Value = 1;
-            }  
+            
+            
         }
 
         private IsyeriBilgileriListesi isyeriEkle()

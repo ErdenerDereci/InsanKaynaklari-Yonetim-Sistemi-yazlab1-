@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EkleGuncelle));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label14 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -126,7 +126,7 @@
             // 
             this.kaydet.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.kaydet.Location = new System.Drawing.Point(742, 739);
-            this.kaydet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kaydet.Margin = new System.Windows.Forms.Padding(4);
             this.kaydet.Name = "kaydet";
             this.kaydet.Size = new System.Drawing.Size(95, 29);
             this.kaydet.TabIndex = 107;
@@ -159,61 +159,55 @@
             // yabanciDilText
             // 
             this.yabanciDilText.Location = new System.Drawing.Point(423, 229);
-            this.yabanciDilText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.yabanciDilText.Margin = new System.Windows.Forms.Padding(4);
             this.yabanciDilText.Name = "yabanciDilText";
             this.yabanciDilText.Size = new System.Drawing.Size(148, 21);
             this.yabanciDilText.TabIndex = 82;
-            this.yabanciDilText.Text = "ing";
             this.yabanciDilText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.yabanciDilText_KeyPress);
             // 
             // dogumTarihiText
             // 
             this.dogumTarihiText.Location = new System.Drawing.Point(141, 229);
-            this.dogumTarihiText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dogumTarihiText.Margin = new System.Windows.Forms.Padding(4);
             this.dogumTarihiText.Name = "dogumTarihiText";
             this.dogumTarihiText.Size = new System.Drawing.Size(148, 21);
             this.dogumTarihiText.TabIndex = 81;
-            this.dogumTarihiText.Text = "1999";
             this.dogumTarihiText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dogumTarihiText_KeyPress);
             // 
             // mailText
             // 
             this.mailText.Location = new System.Drawing.Point(689, 229);
-            this.mailText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mailText.Margin = new System.Windows.Forms.Padding(4);
             this.mailText.Name = "mailText";
             this.mailText.Size = new System.Drawing.Size(148, 21);
             this.mailText.TabIndex = 80;
-            this.mailText.Text = "z@gamil";
             this.mailText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mailText_KeyPress);
             // 
             // telefonText
             // 
             this.telefonText.Location = new System.Drawing.Point(689, 182);
-            this.telefonText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.telefonText.Margin = new System.Windows.Forms.Padding(4);
             this.telefonText.Name = "telefonText";
             this.telefonText.Size = new System.Drawing.Size(148, 21);
             this.telefonText.TabIndex = 79;
-            this.telefonText.Text = "1";
             this.telefonText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telefonText_KeyPress);
             // 
             // kisiAdresiText
             // 
             this.kisiAdresiText.Location = new System.Drawing.Point(423, 182);
-            this.kisiAdresiText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kisiAdresiText.Margin = new System.Windows.Forms.Padding(4);
             this.kisiAdresiText.Name = "kisiAdresiText";
             this.kisiAdresiText.Size = new System.Drawing.Size(148, 21);
             this.kisiAdresiText.TabIndex = 78;
-            this.kisiAdresiText.Text = "Uskudar";
             this.kisiAdresiText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.kisiAdresiText_KeyPress);
             // 
             // kisiAdiText
             // 
             this.kisiAdiText.Location = new System.Drawing.Point(141, 182);
-            this.kisiAdiText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kisiAdiText.Margin = new System.Windows.Forms.Padding(4);
             this.kisiAdiText.Name = "kisiAdiText";
             this.kisiAdiText.Size = new System.Drawing.Size(148, 21);
             this.kisiAdiText.TabIndex = 77;
-            this.kisiAdiText.Text = "zeynep";
             this.kisiAdiText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.kisiAdiText_KeyPress);
             // 
             // label7
@@ -289,21 +283,19 @@
             // sifreText
             // 
             this.sifreText.Location = new System.Drawing.Point(141, 65);
-            this.sifreText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sifreText.Margin = new System.Windows.Forms.Padding(4);
             this.sifreText.Name = "sifreText";
             this.sifreText.Size = new System.Drawing.Size(148, 21);
             this.sifreText.TabIndex = 114;
-            this.sifreText.Text = "1";
             this.sifreText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sifreText_KeyPress);
             // 
             // sifreTekrarText
             // 
             this.sifreTekrarText.Location = new System.Drawing.Point(141, 97);
-            this.sifreTekrarText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sifreTekrarText.Margin = new System.Windows.Forms.Padding(4);
             this.sifreTekrarText.Name = "sifreTekrarText";
             this.sifreTekrarText.Size = new System.Drawing.Size(148, 21);
             this.sifreTekrarText.TabIndex = 115;
-            this.sifreTekrarText.Text = "1";
             this.sifreTekrarText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sifreTekrarText_KeyPress);
             // 
             // label19
@@ -349,25 +341,24 @@
             // ehliyetText
             // 
             this.ehliyetText.Location = new System.Drawing.Point(141, 277);
-            this.ehliyetText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ehliyetText.Margin = new System.Windows.Forms.Padding(4);
             this.ehliyetText.Name = "ehliyetText";
             this.ehliyetText.Size = new System.Drawing.Size(148, 21);
             this.ehliyetText.TabIndex = 121;
-            this.ehliyetText.Text = "b1";
             this.ehliyetText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ehliyetText_KeyPress);
             // 
             // egitimBilgisiDataGridEkle
             // 
             this.egitimBilgisiDataGridEkle.AllowUserToOrderColumns = true;
             this.egitimBilgisiDataGridEkle.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Liberation Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.egitimBilgisiDataGridEkle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Liberation Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.egitimBilgisiDataGridEkle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.egitimBilgisiDataGridEkle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.egitimBilgisiDataGridEkle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.OkulAdi,
@@ -377,7 +368,7 @@
             this.BitisTarihi,
             this.NotOrtalamasi});
             this.egitimBilgisiDataGridEkle.Location = new System.Drawing.Point(37, 361);
-            this.egitimBilgisiDataGridEkle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.egitimBilgisiDataGridEkle.Margin = new System.Windows.Forms.Padding(4);
             this.egitimBilgisiDataGridEkle.Name = "egitimBilgisiDataGridEkle";
             this.egitimBilgisiDataGridEkle.RowHeadersWidth = 51;
             this.egitimBilgisiDataGridEkle.Size = new System.Drawing.Size(800, 159);
@@ -431,14 +422,14 @@
             this.isyeriBilgileriDataGrid.AllowUserToDeleteRows = false;
             this.isyeriBilgileriDataGrid.BackgroundColor = System.Drawing.Color.White;
             this.isyeriBilgileriDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Liberation Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.isyeriBilgileriDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Liberation Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.isyeriBilgileriDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.isyeriBilgileriDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.isyeriBilgileriDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IsyeriAdi,
@@ -447,7 +438,7 @@
             this.CalismaSuresi});
             this.isyeriBilgileriDataGrid.GridColor = System.Drawing.Color.Gray;
             this.isyeriBilgileriDataGrid.Location = new System.Drawing.Point(37, 565);
-            this.isyeriBilgileriDataGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.isyeriBilgileriDataGrid.Margin = new System.Windows.Forms.Padding(4);
             this.isyeriBilgileriDataGrid.Name = "isyeriBilgileriDataGrid";
             this.isyeriBilgileriDataGrid.RowHeadersWidth = 51;
             this.isyeriBilgileriDataGrid.Size = new System.Drawing.Size(800, 156);
@@ -483,9 +474,9 @@
             // 
             // EkleGuncelle
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(876, 791);
             this.Controls.Add(this.isyeriBilgileriDataGrid);
@@ -518,7 +509,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Liberation Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EkleGuncelle";
             this.Text = "Ekle / Güncelle";
             this.Load += new System.EventHandler(this.EkleGuncelle_Load);

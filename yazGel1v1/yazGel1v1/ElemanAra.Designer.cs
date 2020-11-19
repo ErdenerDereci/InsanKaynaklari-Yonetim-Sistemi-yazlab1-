@@ -482,8 +482,7 @@
             // 
             // ElemanAra
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1539, 769);
@@ -510,6 +509,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.searcbar);
             this.Font = new System.Drawing.Font("Liberation Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ElemanAra";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
