@@ -181,10 +181,12 @@ namespace yazGel1v1
 
         private void telefonText_KeyPress(object sender, KeyPressEventArgs e)
         {
-            keyPressColorChange(telefonText);
+            keyPressColorChange(telefonText); 
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+
         }
 
-        private void yabanciDilText_KeyPress(object sender, KeyPressEventArgs e)
+    private void yabanciDilText_KeyPress(object sender, KeyPressEventArgs e)
         {
             keyPressColorChange(yabanciDilText);
         }

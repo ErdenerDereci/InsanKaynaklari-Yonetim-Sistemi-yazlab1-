@@ -18,7 +18,7 @@ namespace Liste
         TreeNode root;
         int id = 0;
         int sayac;
-        int sayac2;
+        float minimumDeneyimSayac;
         public TreeNode cekilecekNode;
         public List<TreeNode> filtrelenmisTreeNodeListesi = new List<TreeNode>();
         public List<TreeNode> temp = new List<TreeNode>();
@@ -203,7 +203,7 @@ namespace Liste
             }
             else if (sart == "searchbar")
             {
-                if (node.kisiAdiSoyadi == aranan)
+                if (node.kisiAdiSoyadi.ToLower().Contains(aranan))
                 {
                     temp.Add(node);
                 }
@@ -211,15 +211,15 @@ namespace Liste
             else if (sart == "minimumDeneyim")
             {
 
-                sayac2 = 0;
+                minimumDeneyimSayac = 0;
                 //Deneyimleri toplayacak dongu
                 for (int i = 0; i < node.kisiIsyeriBilgileriListesi.count(); i++)
                 {
-                    sayac2 = sayac2 + Convert.ToInt32(node.kisiIsyeriBilgileriListesi.isyeribilgileriDugum(i).suresi);
+                    minimumDeneyimSayac = minimumDeneyimSayac + float.Parse(node.kisiIsyeriBilgileriListesi.isyeribilgileriDugum(i).suresi);
 
                 }
                 //Aranandan buyukse veya esitse listeye atilacak
-                if (sayac2 >= Convert.ToInt32(aranan))
+                if (minimumDeneyimSayac >= float.Parse(aranan))
 
                 {
                     temp.Add(node);
@@ -234,7 +234,7 @@ namespace Liste
             }
             else if (sart == "ehliyet")
             {
-                if (ehliyetKontrolEt(aranan, node.kisiEhliyet))
+                if (ehliyetKontrolEt(aranan.ToLower(), node.kisiEhliyet.ToLower()))
                 {
                     temp.Add(node);
                 }

@@ -1,50 +1,286 @@
 *********KISI BILGILERI*********
  
-Kisi Adi Soyadi: 1
-Kisi Adresi: 1
-Kisi Telefonu: 12
-Kisi Mail: 1
-Kisi DogumTarihi: 1
-Kisi Yabanci Dil: 1
-Kisi Ehliyet: 1
+Kisi Adi Soyadi: Ahmet Sarı
+Kisi Adresi: Manisa
+Kisi Telefonu: 5071234567
+Kisi Mail: asari@gmail.com
+Kisi DogumTarihi: 1989
+Kisi Yabanci Dil: Arapça, İngilizce, Almanca
+Kisi Ehliyet: B
  
 --------Egitim Bilgileri--------
  
-Okul Adi: a
-Okul Turu: a
-Bolumu: a
-Baslangic Tarihi: a
-Bitis Tarihi: a
-Not Ortalamasi: a
+Okul Adi: Manisa Lisesi
+Okul Turu: Lise
+Bolumu: Sayısal
+Baslangic Tarihi: 2003
+Bitis Tarihi: 2006
+Not Ortalamasi: 70
 ......
  
-Okul Adi: a
-Okul Turu: a
-Bolumu: a
-Baslangic Tarihi: a
-Bitis Tarihi: a
-Not Ortalamasi: a
+Okul Adi: Yalvaç MYO
+Okul Turu: Yüksek Okul
+Bolumu: Bilgisayar Programcılığı
+Baslangic Tarihi: 2006
+Bitis Tarihi: 2008
+Not Ortalamasi: 95
+......
+ 
+Okul Adi: Selçuk Üniversitesi
+Okul Turu: Lisans
+Bolumu: Matematik Bilgisayar
+Baslangic Tarihi: 2009
+Bitis Tarihi: 2012
+Not Ortalamasi: 90
+......
+ 
+Okul Adi: Gazi Üniveristesi
+Okul Turu: Yüksek Lisans
+Bolumu: Bilgisayar Müh
+Baslangic Tarihi: 2012
+Bitis Tarihi: 2015
+Not Ortalamasi: 92
+......
++++++++++Isyeri Bilgileri+++++++++
+ 
+Isyeri Adi: AG Software
+Isyeri Adresi: Konya
+Gorevi: Programcı
+Calisma suresi: 2
+......
+ 
+Isyeri Adi: Randstad Professionals
+Isyeri Adresi: Ankara
+Gorevi: Firmware Engineer
+Calisma suresi: 2
+......
+_____________________________________________________________________
+*********KISI BILGILERI*********
+ 
+Kisi Adi Soyadi: Ali Kaya
+Kisi Adresi: İstanbul
+Kisi Telefonu: 5321234567
+Kisi Mail: akaya@gmail.com
+Kisi DogumTarihi: 1985
+Kisi Yabanci Dil: İngilizce, Fransızca
+Kisi Ehliyet: A2, B
+ 
+--------Egitim Bilgileri--------
+ 
+Okul Adi: Galatasaray  Lisesi
+Okul Turu: Lise
+Bolumu: Sayısal
+Baslangic Tarihi: 1999
+Bitis Tarihi: 2003
+Not Ortalamasi: 82
+......
+ 
+Okul Adi: Yıldız Teknik Üniversitesi
+Okul Turu: Lisans
+Bolumu: Bilgisayar Müh
+Baslangic Tarihi: 2004
+Bitis Tarihi: 2009
+Not Ortalamasi: 80
+......
+ 
+Okul Adi: Yıldız Teknik Üniversitesi
+Okul Turu: Yüksek Lisans
+Bolumu: Bilgisayar Müh
+Baslangic Tarihi: 2010
+Bitis Tarihi: 2013
+Not Ortalamasi: 95
+......
+ 
+Okul Adi: Boğaziçi Üniversitesi
+Okul Turu: Doktora
+Bolumu: Bilgisayar Müh
+Baslangic Tarihi: 2013
+Bitis Tarihi: Devam Ediyor
+Not Ortalamasi: e
+......
++++++++++Isyeri Bilgileri+++++++++
+ 
+Isyeri Adi: Burger King 
+Isyeri Adresi: İstanbul
+Gorevi: Vardiya Müdürü
+Calisma suresi: 2
+......
+ 
+Isyeri Adi: Armada Bilgisayar
+Isyeri Adresi: İstanbul
+Gorevi: Yazılım Uzmanı
+Calisma suresi: 1
+......
+ 
+Isyeri Adi: Comodo yazılım AŞ
+Isyeri Adresi: Ankara
+Gorevi: Front End Developer
+Calisma suresi: 0,5
+......
+ 
+Isyeri Adi: Destek Group
+Isyeri Adresi: İstanbul, Ankara
+Gorevi: Bilgisayar Mühendisi
+Calisma suresi: 2
+......
+ 
+Isyeri Adi: Otokar
+Isyeri Adresi: Kocaeli
+Gorevi: Network ve Güvenlik Mühendisi
+Calisma suresi: 1,5
+......
+ 
+Isyeri Adi: Vodafone
+Isyeri Adresi: İstanbul
+Gorevi: Mediation Solutions Senior Specialist 
+Calisma suresi: 1,5
+......
+_____________________________________________________________________
+*********KISI BILGILERI*********
+ 
+Kisi Adi Soyadi: Aslı Yel
+Kisi Adresi: Trabzon
+Kisi Telefonu: 5421234567
+Kisi Mail: ayel@yahoo.com
+Kisi DogumTarihi: 1970
+Kisi Yabanci Dil: İngilizce
+Kisi Ehliyet: -
+ 
+--------Egitim Bilgileri--------
+ 
+Okul Adi: Of Kız Meslek Lisesi
+Okul Turu: Lise
+Bolumu: Elektrik
+Baslangic Tarihi: 1985
+Bitis Tarihi: 1990
+Not Ortalamasi: 79
+......
+ 
+Okul Adi: Orta Doğu Teknik Üniversitesi
+Okul Turu: Lisans
+Bolumu: Elektrik-Elektronik Mühendisliği
+Baslangic Tarihi: 1992
+Bitis Tarihi: 1996
+Not Ortalamasi: 80
+......
++++++++++Isyeri Bilgileri+++++++++
+ 
+Isyeri Adi: Türk Telekom
+Isyeri Adresi: Trabzon
+Gorevi: Mühendis 
+Calisma suresi: 10
+......
+ 
+Isyeri Adi: Türk Telekom
+Isyeri Adresi: Ankara
+Gorevi: Müdür
+Calisma suresi: 14
+......
+_____________________________________________________________________
+*********KISI BILGILERI*********
+ 
+Kisi Adi Soyadi: Mehmet Sağlam
+Kisi Adresi: Kocaeli
+Kisi Telefonu: 5051234567
+Kisi Mail: msaglam@hotmail.com
+Kisi DogumTarihi: 1990
+Kisi Yabanci Dil: -
+Kisi Ehliyet: B
+ 
+--------Egitim Bilgileri--------
+ 
+Okul Adi: Isparta Anadolu Lisesi
+Okul Turu: Lise
+Bolumu: Sayısal
+Baslangic Tarihi: 2005
+Bitis Tarihi: 2009
+Not Ortalamasi: 92
+......
+ 
+Okul Adi: Kocaeli Üniversitesi
+Okul Turu: Lisans
+Bolumu: Bilgisayar Müh
+Baslangic Tarihi: 2010
+Bitis Tarihi: 2015
+Not Ortalamasi: 75
 ......
 +++++++++Isyeri Bilgileri+++++++++
 _____________________________________________________________________
 *********KISI BILGILERI*********
  
-Kisi Adi Soyadi: z
-Kisi Adresi: z
-Kisi Telefonu: zz
-Kisi Mail: z
-Kisi DogumTarihi: z
-Kisi Yabanci Dil: z
-Kisi Ehliyet: z
+Kisi Adi Soyadi: Neriman Koç
+Kisi Adresi: Ankara
+Kisi Telefonu: 5331234567
+Kisi Mail: nkoca@ymail.com
+Kisi DogumTarihi: 1988
+Kisi Yabanci Dil: Almanca
+Kisi Ehliyet: E
  
 --------Egitim Bilgileri--------
  
-Okul Adi: a
-Okul Turu: s
-Bolumu: a
-Baslangic Tarihi: a
-Bitis Tarihi: s
-Not Ortalamasi: s
+Okul Adi: Ankara Anadolu Öğretmen Lisesi
+Okul Turu: Lise
+Bolumu: Sayısal
+Baslangic Tarihi: 2002
+Bitis Tarihi: 2005
+Not Ortalamasi: 90
+......
+ 
+Okul Adi: Ege Üniversitesi
+Okul Turu: Lisans
+Bolumu: Elektronik Haberleşme Müh
+Baslangic Tarihi: 2005
+Bitis Tarihi: 2010
+Not Ortalamasi: 70
+......
+ 
+Okul Adi: N Üniversitesi
+Okul Turu: Yüksek Lisans
+Bolumu: Elektronik Haberleşme Müh
+Baslangic Tarihi: 2011
+Bitis Tarihi: Devam Ediyor
+Not Ortalamasi: -
 ......
 +++++++++Isyeri Bilgileri+++++++++
+ 
+Isyeri Adi: Ege Üniversitesi Elektronik Haberleşme
+Isyeri Adresi: İzmir
+Gorevi: Araştırma Görevlisi
+Calisma suresi: 3
+......
+_____________________________________________________________________
+*********KISI BILGILERI*********
+ 
+Kisi Adi Soyadi: Selim Mert
+Kisi Adresi: İstanbul
+Kisi Telefonu: 5061234567
+Kisi Mail: smert@gmail.com
+Kisi DogumTarihi: 1985
+Kisi Yabanci Dil: -
+Kisi Ehliyet: B
+ 
+--------Egitim Bilgileri--------
+ 
+Okul Adi: Çorum Lisesi
+Okul Turu: Lise
+Bolumu: Sayısal
+Baslangic Tarihi: 1999
+Bitis Tarihi: 2002
+Not Ortalamasi: 80
+......
+ 
+Okul Adi: Marmara Üniversitesi
+Okul Turu: Lisans
+Bolumu: Elektronik Mühendisliği
+Baslangic Tarihi: 2004
+Bitis Tarihi: 2010
+Not Ortalamasi: 77
+......
++++++++++Isyeri Bilgileri+++++++++
+ 
+Isyeri Adi: KAREL
+Isyeri Adresi: İstanbul
+Gorevi: Gömülü Yazılım Mühendisi
+Calisma suresi: 5
+......
 _____________________________________________________________________

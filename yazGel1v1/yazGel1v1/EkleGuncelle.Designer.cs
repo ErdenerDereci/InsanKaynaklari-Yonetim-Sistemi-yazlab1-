@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EkleGuncelle));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label14 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -78,7 +78,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Liberation Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label14.Location = new System.Drawing.Point(394, 532);
+            this.label14.Location = new System.Drawing.Point(396, 488);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(100, 14);
@@ -89,7 +89,7 @@
             // 
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Liberation Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label41.Location = new System.Drawing.Point(33, 532);
+            this.label41.Location = new System.Drawing.Point(35, 488);
             this.label41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(807, 14);
@@ -125,7 +125,7 @@
             // kaydet
             // 
             this.kaydet.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.kaydet.Location = new System.Drawing.Point(742, 739);
+            this.kaydet.Location = new System.Drawing.Point(744, 695);
             this.kaydet.Margin = new System.Windows.Forms.Padding(4);
             this.kaydet.Name = "kaydet";
             this.kaydet.Size = new System.Drawing.Size(95, 29);
@@ -138,7 +138,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Liberation Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label11.Location = new System.Drawing.Point(396, 324);
+            this.label11.Location = new System.Drawing.Point(398, 280);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(102, 14);
@@ -149,7 +149,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Liberation Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.Location = new System.Drawing.Point(32, 324);
+            this.label10.Location = new System.Drawing.Point(34, 280);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(807, 14);
@@ -158,7 +158,7 @@
             // 
             // yabanciDilText
             // 
-            this.yabanciDilText.Location = new System.Drawing.Point(423, 229);
+            this.yabanciDilText.Location = new System.Drawing.Point(423, 211);
             this.yabanciDilText.Margin = new System.Windows.Forms.Padding(4);
             this.yabanciDilText.Name = "yabanciDilText";
             this.yabanciDilText.Size = new System.Drawing.Size(148, 21);
@@ -167,7 +167,7 @@
             // 
             // dogumTarihiText
             // 
-            this.dogumTarihiText.Location = new System.Drawing.Point(141, 229);
+            this.dogumTarihiText.Location = new System.Drawing.Point(141, 211);
             this.dogumTarihiText.Margin = new System.Windows.Forms.Padding(4);
             this.dogumTarihiText.Name = "dogumTarihiText";
             this.dogumTarihiText.Size = new System.Drawing.Size(148, 21);
@@ -176,7 +176,7 @@
             // 
             // mailText
             // 
-            this.mailText.Location = new System.Drawing.Point(689, 229);
+            this.mailText.Location = new System.Drawing.Point(689, 211);
             this.mailText.Margin = new System.Windows.Forms.Padding(4);
             this.mailText.Name = "mailText";
             this.mailText.Size = new System.Drawing.Size(148, 21);
@@ -213,7 +213,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(82, 280);
+            this.label7.Location = new System.Drawing.Point(82, 243);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 14);
@@ -223,7 +223,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(338, 232);
+            this.label6.Location = new System.Drawing.Point(338, 214);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 14);
@@ -243,7 +243,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(625, 232);
+            this.label4.Location = new System.Drawing.Point(625, 214);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 14);
@@ -263,7 +263,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 232);
+            this.label2.Location = new System.Drawing.Point(46, 214);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 14);
@@ -340,7 +340,7 @@
             // 
             // ehliyetText
             // 
-            this.ehliyetText.Location = new System.Drawing.Point(141, 277);
+            this.ehliyetText.Location = new System.Drawing.Point(141, 240);
             this.ehliyetText.Margin = new System.Windows.Forms.Padding(4);
             this.ehliyetText.Name = "ehliyetText";
             this.ehliyetText.Size = new System.Drawing.Size(148, 21);
@@ -351,14 +351,14 @@
             // 
             this.egitimBilgisiDataGridEkle.AllowUserToOrderColumns = true;
             this.egitimBilgisiDataGridEkle.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Liberation Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.egitimBilgisiDataGridEkle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Liberation Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.egitimBilgisiDataGridEkle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.egitimBilgisiDataGridEkle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.egitimBilgisiDataGridEkle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.OkulAdi,
@@ -367,7 +367,7 @@
             this.BaglangicTarihi,
             this.BitisTarihi,
             this.NotOrtalamasi});
-            this.egitimBilgisiDataGridEkle.Location = new System.Drawing.Point(37, 361);
+            this.egitimBilgisiDataGridEkle.Location = new System.Drawing.Point(39, 317);
             this.egitimBilgisiDataGridEkle.Margin = new System.Windows.Forms.Padding(4);
             this.egitimBilgisiDataGridEkle.Name = "egitimBilgisiDataGridEkle";
             this.egitimBilgisiDataGridEkle.RowHeadersWidth = 51;
@@ -422,14 +422,14 @@
             this.isyeriBilgileriDataGrid.AllowUserToDeleteRows = false;
             this.isyeriBilgileriDataGrid.BackgroundColor = System.Drawing.Color.White;
             this.isyeriBilgileriDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Liberation Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.isyeriBilgileriDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Liberation Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.isyeriBilgileriDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.isyeriBilgileriDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.isyeriBilgileriDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IsyeriAdi,
@@ -437,7 +437,7 @@
             this.Gorevi,
             this.CalismaSuresi});
             this.isyeriBilgileriDataGrid.GridColor = System.Drawing.Color.Gray;
-            this.isyeriBilgileriDataGrid.Location = new System.Drawing.Point(37, 565);
+            this.isyeriBilgileriDataGrid.Location = new System.Drawing.Point(39, 521);
             this.isyeriBilgileriDataGrid.Margin = new System.Windows.Forms.Padding(4);
             this.isyeriBilgileriDataGrid.Name = "isyeriBilgileriDataGrid";
             this.isyeriBilgileriDataGrid.RowHeadersWidth = 51;
@@ -477,7 +477,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(876, 791);
+            this.ClientSize = new System.Drawing.Size(876, 738);
             this.Controls.Add(this.isyeriBilgileriDataGrid);
             this.Controls.Add(this.egitimBilgisiDataGridEkle);
             this.Controls.Add(this.ehliyetText);
